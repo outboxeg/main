@@ -391,11 +391,11 @@ function setupSheetStructure(sheet, headers) {
                                     <select class="form-select" id="imgTargetSelect">
                                         <option value="logo">شعار مشروع برة الصندوق المفرغ (Header Logo)</option>
                                         <option value="israaLogo">شعار جمعية الإسراء الخيرية بدمنهور</option>
-                                        <option value="heroBg">الصورة الجماعية للهيرو (field-group.png)</option>
-                                        <option value="womenPhoto">صورة ورشة تمكين السيدات (field-women.png)</option>
-                                        <option value="artPhoto">صورة رسوم وأنشطة الطلاب (field-art.png)</option>
-                                        <option value="flagPhoto">صورة فعالية رفع العلم بالجمعية (field-flag.png)</option>
-                                        <option value="bannerPhoto">البانر الميداني الحكومي الرسمي (banner.jpeg)</option>
+                                        <option value="heroBg">الصورة الجماعية للهيرو (./assets/images/field-group.png)</option>
+                                        <option value="womenPhoto">صورة ورشة تمكين السيدات (./assets/images/field-women.png)</option>
+                                        <option value="artPhoto">صورة رسوم وأنشطة الطلاب (./assets/images/field-art.png)</option>
+                                        <option value="flagPhoto">صورة فعالية رفع العلم بالجمعية (./assets/images/field-flag.png)</option>
+                                        <option value="bannerPhoto">البانر الميداني الحكومي الرسمي (./assets/images/banner.jpeg)</option>
                                     </select>
                                 </div>
 
@@ -406,7 +406,7 @@ function setupSheetStructure(sheet, headers) {
 
                                 <div class="form-group">
                                     <label class="form-label">أو ادخل رابط صورة خارجي (Image URL):</label>
-                                    <input type="text" class="form-input" id="imgUrlInput" placeholder="./field-group.png">
+                                    <input type="text" class="form-input" id="imgUrlInput" placeholder="./assets/images/field-group.png">
                                 </div>
 
                                 <button class="btn btn-primary spring-hover" id="saveImageBtn" style="padding: 0.85rem 2rem;">
@@ -417,7 +417,7 @@ function setupSheetStructure(sheet, headers) {
                             <div style="background: var(--color-muted); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                                 <h4 style="color: var(--color-primary-dark); margin-bottom: 1rem;">معاينة الصورة المختارة (Live Preview):</h4>
                                 <div style="width: 100%; height: 220px; border-radius: var(--radius-md); overflow: hidden; background: #FFFFFF; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center;">
-                                    <img id="imgLivePreview" src="./field-group.png" alt="معاينة" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img id="imgLivePreview" src="./assets/images/field-group.png" alt="معاينة" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 </div>
                             </div>
                         </div>
@@ -823,7 +823,7 @@ function initAdminLogic() {
         });
 
         imgUrlInput.addEventListener('input', () => {
-            imgLivePreview.src = imgUrlInput.value || './field-group.png';
+            imgLivePreview.src = imgUrlInput.value || './assets/images/field-group.png';
         });
 
         if (saveImageBtn) {

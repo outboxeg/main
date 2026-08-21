@@ -177,7 +177,7 @@ function renderFormsPage() {
                 <!-- 4. Women Workshop & Empowerment Form -->
                 <div class="form-card glass-card form-pane" id="womenFormPane" style="display: none; border-radius: var(--radius-lg); padding: 2.25rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-default); background: var(--color-surface);">
                     <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                        <img src="./محتوي/برة 12.png" alt="ورشة تمكين المرأة والفتيات" style="width: 120px; height: 90px; object-fit: cover; border-radius: var(--radius-md); border: 2px solid var(--color-border);">
+                        <img src="./assets/images/برة 12.png" alt="ورشة تمكين المرأة والفتيات" style="width: 120px; height: 90px; object-fit: cover; border-radius: var(--radius-md); border: 2px solid var(--color-border);">
                         <div>
                             <h2 style="font-size: 1.5rem; margin: 0; color: var(--color-primary-dark); display: flex; align-items: center; gap: 0.5rem;">
                                 <i data-lucide="sparkles" style="color: #EC4899;"></i> اهتمام السيدات والفتيات بالتدريب وفرص العمل الأخضر

@@ -44,7 +44,7 @@ function renderKnowledgePage() {
                     <!-- Card 1: العب وتعلم -->
                     <div class="card spring-hover knowledge-card" data-subject="math" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 1.png" alt="وسيلة العب وتعلم الحساب بالأصابع" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 1.png" alt="وسيلة العب وتعلم الحساب بالأصابع" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="calculator"></i> رياضيات
                             </span>
@@ -76,7 +76,7 @@ function renderKnowledgePage() {
                     <!-- Card 2: تصنيف الأشكال والألوان -->
                     <div class="card spring-hover knowledge-card" data-subject="science" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 2.png" alt="لوحة تصنيف الأشكال والألوان" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 2.png" alt="لوحة تصنيف الأشكال والألوان" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="flask-conical"></i> علوم ومهارات
                             </span>
@@ -108,7 +108,7 @@ function renderKnowledgePage() {
                     <!-- Card 3: بازل الحروف والكلمات -->
                     <div class="card spring-hover knowledge-card" data-subject="arabic" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 3.png" alt="بازل الحروف والكلمات باللغة العربية" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 3.png" alt="بازل الحروف والكلمات باللغة العربية" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="languages"></i> لغة عربية
                             </span>
@@ -140,7 +140,7 @@ function renderKnowledgePage() {
                     <!-- Card 4: ساعة الوقت التعليمية -->
                     <div class="card spring-hover knowledge-card" data-subject="math" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 4.png" alt="ساعة الوقت التعليمية من الكرتون" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 4.png" alt="ساعة الوقت التعليمية من الكرتون" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="calculator"></i> رياضيات ومهارات
                             </span>
@@ -172,7 +172,7 @@ function renderKnowledgePage() {
                     <!-- Card 5: دورة حياة النبات -->
                     <div class="card spring-hover knowledge-card" data-subject="science" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 5.png" alt="لوحة دورة حياة النبات والزراعة" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 5.png" alt="لوحة دورة حياة النبات والزراعة" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="flask-conical"></i> علوم وبيئة
                             </span>
@@ -204,7 +204,7 @@ function renderKnowledgePage() {
                     <!-- Card 6: لوحة الطقس والفصول -->
                     <div class="card spring-hover knowledge-card" data-subject="science" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 6.png" alt="لوحة الطقس والفصول وتغير المناخ" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 6.png" alt="لوحة الطقس والفصول وتغير المناخ" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="flask-conical"></i> علوم ومناخ
                             </span>
@@ -236,7 +236,7 @@ function renderKnowledgePage() {
                     <!-- Card 7: سلة الفرز التعليمية -->
                     <div class="card spring-hover knowledge-card" data-subject="eco-skills" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 7.png" alt="سلة الفرز التعليمية الأربعة" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 7.png" alt="سلة الفرز التعليمية الأربعة" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="leaf"></i> مهارات بيئية
                             </span>
@@ -268,7 +268,7 @@ function renderKnowledgePage() {
                     <!-- Card 8: مسرح العرائس الورقي -->
                     <div class="card spring-hover knowledge-card" data-subject="eco-skills" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة الصندوق 8.png" alt="مسرح العرائس الورقي التوعوي" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة الصندوق 8.png" alt="مسرح العرائس الورقي التوعوي" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="theater"></i> مهارات بيئية وفنون
                             </span>
@@ -300,7 +300,7 @@ function renderKnowledgePage() {
                     <!-- Card 9: جدول السلوك البيئي اليومي -->
                     <div class="card spring-hover knowledge-card" data-subject="eco-skills" style="display: flex; flex-direction: column; height: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-default);">
                         <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 9.png" alt="جدول السلوك البيئي اليومي" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 9.png" alt="جدول السلوك البيئي اليومي" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); font-weight: 700; color: var(--color-primary-dark);">
                                 <i data-lucide="check-square"></i> مهارات بيئية
                             </span>

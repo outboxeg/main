@@ -6,7 +6,7 @@
 function renderHomePage() {
     return `
         <!-- Hero Section with Real Field Photo Background & Translucent Overlay -->
-        <section class="hero-section" style="position: relative; background: linear-gradient(rgba(11, 79, 63, 0.90), rgba(19, 78, 74, 0.95)), url('./محتوي/برة 13.png') center/cover no-repeat; color: #ffffff; padding: 4.5rem 0 4rem; overflow: hidden; border-bottom: 1px solid var(--color-border);">
+        <section class="hero-section" style="position: relative; background: linear-gradient(rgba(11, 79, 63, 0.90), rgba(19, 78, 74, 0.95)), url('./assets/images/برة 13.png') center/cover no-repeat; color: #ffffff; padding: 4.5rem 0 4rem; overflow: hidden; border-bottom: 1px solid var(--color-border);">
             <div class="container" style="position: relative; z-index: 2;">
                 <div style="max-width: 900px; margin: 0 auto; text-align: center;">
                     <!-- Badge & Institutional Pill -->
@@ -70,7 +70,7 @@ function renderHomePage() {
                     <!-- Card 1: Main Project Brand -->
                     <div class="card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
                         <div class="partner-logo-box" style="height: 100px; background: #FFFFFF; border-radius: var(--radius-md); padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1.25rem;">
-                            <img src="./محتوي/لوجو_برة_الصندوق_1-removebg-preview.png" alt="شعار برة الصندوق – المدرسة الخضراء الذكية" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto;">
+                            <img src="./assets/images/لوجو_برة_الصندوق_1-removebg-preview.png" alt="شعار برة الصندوق – المدرسة الخضراء الذكية" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto;">
                         </div>
                         <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">مشروع "برة الصندوق – المدرسة الخضراء الذكية"</h3>
                         <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
@@ -82,7 +82,7 @@ function renderHomePage() {
                     <!-- Card 2: Official Field Partner (El-Israa Association) -->
                     <div class="card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
                         <div class="partner-logo-box" style="height: 100px; background: #FFFFFF; border-radius: var(--radius-md); padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1.25rem;">
-                            <img src="./محتوي/لوجو جمعية الاسراء.jpg" alt="شعار جمعية الإسراء الخيرية لتنمية المجتمع بدمنهور" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
+                            <img src="./assets/images/لوجو جمعية الاسراء.jpg" alt="شعار جمعية الإسراء الخيرية لتنمية المجتمع بدمنهور" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
                         </div>
                         <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">جمعية الإسراء الخيرية بدمنهور</h3>
                         <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
@@ -373,7 +373,7 @@ function renderHomePage() {
                     <!-- Photo 1: Women Empowerment Session -->
                     <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
                         <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 12.png" alt="ورشة عمل تمكين المرأة والتوعية المجتمعية" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <img src="./assets/images/برة 12.png" alt="ورشة عمل تمكين المرأة والتوعية المجتمعية" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                         <div style="padding: 1.25rem;">
                             <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="users"></i> تمكين المرأة 40%</span>
@@ -385,7 +385,7 @@ function renderHomePage() {
                     <!-- Photo 2: Leadership & Community Group -->
                     <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
                         <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 13.png" alt="صورة جماعية لقيادات مشروع برة الصندوق والأسر" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <img src="./assets/images/برة 13.png" alt="صورة جماعية لقيادات مشروع برة الصندوق والأسر" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                         <div style="padding: 1.25rem;">
                             <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="award"></i> القيادة الميدانية</span>
@@ -397,7 +397,7 @@ function renderHomePage() {
                     <!-- Photo 3: Student Artwork Workshop -->
                     <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
                         <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/برة 10.png" alt="نشاط الفنون والرسومات بالورق المعاد استخدامه" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <img src="./assets/images/برة 10.png" alt="نشاط الفنون والرسومات بالورق المعاد استخدامه" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                         <div style="padding: 1.25rem;">
                             <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="sparkles"></i> الأنشطة الطلابية</span>
@@ -409,7 +409,7 @@ function renderHomePage() {
                     <!-- Photo 4: Official Banner in Action -->
                     <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
                         <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./محتوي/بانر برة الصندوق.jpeg" alt="البانر الميداني الحكومي المعتمد للمشروع" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <img src="./assets/images/بانر برة الصندوق.jpeg" alt="البانر الميداني الحكومي المعتمد للمشروع" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                         <div style="padding: 1.25rem;">
                             <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="shield-check"></i> اعتماد وزارة التربية والتعليم</span>

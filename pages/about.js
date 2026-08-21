@@ -11,7 +11,7 @@ function renderAboutPage() {
                 <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; text-align: center;" class="about-hero-grid">
                     <div style="max-width: 800px; margin: 0 auto;">
                         <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                            <img src="./محتوي/لوجو برة الصندوق 1.png" alt="الشعار الرسمي الكامل لمشروع برة الصندوق" style="max-width: 260px; width: 100%; height: auto; border-radius: var(--radius-lg); filter: drop-shadow(0 12px 24px rgba(15, 80, 60, 0.15)); background: #ffffff; padding: 0.75rem; border: 1px solid var(--color-border);">
+                            <img src="./assets/images/لوجو برة الصندوق 1.png" alt="الشعار الرسمي الكامل لمشروع برة الصندوق" style="max-width: 260px; width: 100%; height: auto; border-radius: var(--radius-lg); filter: drop-shadow(0 12px 24px rgba(15, 80, 60, 0.15)); background: #ffffff; padding: 0.75rem; border: 1px solid var(--color-border);">
                         </div>
                         <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">
                             <i data-lucide="info"></i> بطاقة تعريفية موثقة ومعتمدة
@@ -83,12 +83,12 @@ function renderAboutPage() {
                     <h3 style="font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: 1.5rem;">الشعاران الرسميان والشراكة المؤسسية</h3>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 1.5rem;" class="dual-logos-container">
                         <div style="text-align: center;">
-                            <img src="./محتوي/لوجو برة الصندوق 1.png" alt="شعار مشروع برة الصندوق" style="max-height: 110px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
+                            <img src="./assets/images/لوجو برة الصندوق 1.png" alt="شعار مشروع برة الصندوق" style="max-height: 110px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
                             <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary); margin-top: 0.5rem;">شعار مشروع برة الصندوق</div>
                         </div>
                         <div style="font-size: 2rem; color: var(--color-primary); font-weight: 700;">+</div>
                         <div style="text-align: center;">
-                            <img src="./محتوي/لوجو جمعية الاسراء.jpg" alt="شعار جمعية الإسراء الخيرية بدمنهور" style="max-height: 110px; width: auto; object-fit: contain; border-radius: 12px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
+                            <img src="./assets/images/لوجو جمعية الاسراء.jpg" alt="شعار جمعية الإسراء الخيرية بدمنهور" style="max-height: 110px; width: auto; object-fit: contain; border-radius: 12px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
                             <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary); margin-top: 0.5rem;">شعار جمعية الإسراء الخيرية (إشهار 1124)</div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ function renderAboutPage() {
                     <!-- Women Empowerment Card (برة 12.png) -->
                     <div class="card glass-card spring-hover" style="background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-default);">
                         <div style="position: relative; overflow: hidden; aspect-ratio: 4/3;">
-                            <img src="./محتوي/برة 12.png" alt="دورة تدريب وتمكين المرأة" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 12.png" alt="دورة تدريب وتمكين المرأة" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 1rem; right: 1rem; background: rgba(31, 122, 90, 0.9); color: #ffffff; backdrop-filter: blur(8px);">
                                 إثبات تخصيص 40%
                             </span>
@@ -132,7 +132,7 @@ function renderAboutPage() {
                     <!-- Children Activity Card 1 (برة 10.png) -->
                     <div class="card glass-card spring-hover" style="background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-default);">
                         <div style="position: relative; overflow: hidden; aspect-ratio: 4/3;">
-                            <img src="./محتوي/برة 10.png" alt="ورشة الرسم والابتكار للأطفال" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 10.png" alt="ورشة الرسم والابتكار للأطفال" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 1rem; right: 1rem; background: rgba(28, 154, 139, 0.9); color: #ffffff; backdrop-filter: blur(8px);">
                                 ورش الابتكار الفني
                             </span>
@@ -150,7 +150,7 @@ function renderAboutPage() {
                     <!-- Children Activity Card 2 (برة 11.png) -->
                     <div class="card glass-card spring-hover" style="background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-default);">
                         <div style="position: relative; overflow: hidden; aspect-ratio: 4/3;">
-                            <img src="./محتوي/برة 11.png" alt="النشيد الوطني والأنشطة المدرسية" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            <img src="./assets/images/برة 11.png" alt="النشيد الوطني والأنشطة المدرسية" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                             <span class="badge badge-certified" style="position: absolute; top: 1rem; right: 1rem; background: rgba(31, 122, 90, 0.9); color: #ffffff; backdrop-filter: blur(8px);">
                                 التواجد بـ 26 مدرسة
                             </span>
@@ -170,7 +170,7 @@ function renderAboutPage() {
                 <div class="card glass-card spring-hover" style="background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; margin-top: 2.5rem; box-shadow: var(--shadow-default);">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center;">
                         <div style="aspect-ratio: 16/10; overflow: hidden;">
-                            <img src="./محتوي/برة 13.png" alt="قيادات المشروع والمجموعة المجتمعية" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="./assets/images/برة 13.png" alt="قيادات المشروع والمجموعة المجتمعية" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 2.5rem;">
                             <span class="badge badge-certified" style="margin-bottom: 0.75rem; display: inline-block;">قيادات المشروع والمجتمع</span>
