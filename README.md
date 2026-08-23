@@ -2,14 +2,14 @@
 ## Bara El-Sandouq – Smart Green School Platform
 ### 🏆 المبادرة الوطنية للمشروعات الخضراء الذكية 2026 (NISGP) | محافظة البحيرة
 
-[![Status](https://img.shields.io/badge/Status-Active%20%26%20Field%20Verified-0B4F3F?style=for-the-badge&logo=eco)](https://ngohub.github.io/outbox/)
-[![Platform](https://img.shields.io/badge/Platform-GitHub%20Pages%20Live-128C7E?style=for-the-badge&logo=github)](https://ngohub.github.io/outbox/)
-[![RTL Ready](https://img.shields.io/badge/Accessibility-WCAG%20AAA%20%2F%20RTL-25D366?style=for-the-badge)](https://ngohub.github.io/outbox/)
+[![Status](https://img.shields.io/badge/Status-Active%20%26%20Field%20Verified-0B4F3F?style=for-the-badge&logo=eco)](https://outboxeg.github.io/outbox/)
+[![Platform](https://img.shields.io/badge/Platform-GitHub%20Pages%20Live-128C7E?style=for-the-badge&logo=github)](https://outboxeg.github.io/outbox/)
+[![RTL Ready](https://img.shields.io/badge/Accessibility-WCAG%20AAA%20%2F%20RTL-25D366?style=for-the-badge)](https://outboxeg.github.io/outbox/)
 
 ---
 
 ### 🌐 رابط المنصة المباشر والحي:
-👉 **[https://ngohub.github.io/outbox/](https://ngohub.github.io/outbox/)**
+👉 **[https://outboxeg.github.io/outbox/](https://outboxeg.github.io/outbox/)**
 
 ---
 
