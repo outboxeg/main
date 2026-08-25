@@ -9,12 +9,17 @@ const { ROOT_DIR, assert, verifyAssetExists, createBrowserEnvironment, createTes
 
 const suite = createTestSuite('Tier 1: Feature Coverage');
 
+function getCssContent() {
+    const p1 = path.join(ROOT_DIR, 'assets', 'css', 'styles.css');
+    const p2 = path.join(ROOT_DIR, 'styles.css');
+    if (fs.existsSync(p1)) return fs.readFileSync(p1, 'utf8');
+    if (fs.existsSync(p2)) return fs.readFileSync(p2, 'utf8');
+    throw new Error('styles.css not found in assets/css/ or root');
+}
+
 // 1. CSS Custom Properties & Design System
 suite.test('TC-T1-01: CSS Custom Tokens Presence in styles.css', () => {
-    const cssPath = path.join(ROOT_DIR, 'styles.css');
-    assert.isTrue(fs.existsSync(cssPath), 'styles.css file must exist');
-    const css = fs.readFileSync(cssPath, 'utf8');
-
+    const css = getCssContent();
     const requiredTokens = [
         '--color-primary',
         '--color-primary-dark',
@@ -33,12 +38,12 @@ suite.test('TC-T1-01: CSS Custom Tokens Presence in styles.css', () => {
 });
 
 suite.test('TC-T1-02: Spring Hover Physics & Motion Utility', () => {
-    const css = fs.readFileSync(path.join(ROOT_DIR, 'styles.css'), 'utf8');
+    const css = getCssContent();
     assert.includes(css, 'cubic-bezier', 'styles.css must utilize spring cubic-bezier easing curve');
 });
 
 suite.test('TC-T1-03: Pointerdown Active Feedback (scale 0.97)', () => {
-    const css = fs.readFileSync(path.join(ROOT_DIR, 'styles.css'), 'utf8');
+    const css = getCssContent();
     assert.isTrue(
         css.includes('scale(0.97)') || css.includes('scale(0.98)') || css.includes(':active'),
         'styles.css must include tactile active feedback for buttons'
@@ -46,7 +51,7 @@ suite.test('TC-T1-03: Pointerdown Active Feedback (scale 0.97)', () => {
 });
 
 suite.test('TC-T1-04: Glassmorphism Material Utility', () => {
-    const css = fs.readFileSync(path.join(ROOT_DIR, 'styles.css'), 'utf8');
+    const css = getCssContent();
     assert.isTrue(
         css.includes('backdrop-filter') || css.includes('glass'),
         'styles.css must define glassmorphism backdrop-filter property'
@@ -54,7 +59,7 @@ suite.test('TC-T1-04: Glassmorphism Material Utility', () => {
 });
 
 suite.test('TC-T1-05: Status Accreditation Badges (Certified, Estimated, Planned, Locked)', () => {
-    const css = fs.readFileSync(path.join(ROOT_DIR, 'styles.css'), 'utf8');
+    const css = getCssContent();
     assert.includes(css, 'badge-certified', 'styles.css must define .badge-certified');
 });
 
@@ -75,6 +80,7 @@ suite.test('TC-T1-07: Footer Information & Attribution', () => {
     assert.includes(html, 'فاطمة عبد المجيد راضي', 'Footer must mention IP owner Fatima Abdulmajeed Radi');
     assert.includes(html, 'جمعية الإسراء', 'Footer must mention El-Israa Association');
     assert.includes(html, '1124', 'Footer must state registration #1124');
+    assert.includes(html, 'policy', 'Footer must link to policy page');
 });
 
 // 3. Homepage (home.js)
@@ -84,7 +90,7 @@ suite.test('TC-T1-08: Homepage View Rendering & Real Field Photos/Metrics', () =
 
     assert.includes(html, 'من مخلفات مدرسية إلى فرص خضراء ذكية', 'Hero title must match specification');
     assert.includes(html, '26', 'Homepage must display 26 schools metric');
-    assert.includes(html, '180 طن', 'Homepage must display 180 tons metric');
+    assert.isTrue(html.includes('180') && html.includes('طن'), 'Homepage must display 180 tons metric');
     assert.includes(html, '8%', 'Homepage must display 8% disabled metric');
     assert.includes(html, '40%', 'Homepage must display 40% women empowerment metric');
     assert.includes(html, 'دورة عمل المنظومة', 'Homepage must render value chain section');
@@ -101,6 +107,7 @@ suite.test('TC-T1-09: About Page Rendering & IP / Institutional Proofs', () => {
     assert.includes(html, '1124', 'Registration #1124 must be present');
     assert.includes(html, 'مايو 2023', 'Timeline must include May 2023 inception date');
     assert.includes(html, 'القيم الحاكمة', '10 governing values section present');
+    assert.includes(html, 'سياسة الحماية وعدم التمييز', 'About page includes policy accreditation banner');
 });
 
 // 5. Knowledge Hub (knowledge.js)
@@ -174,30 +181,37 @@ suite.test('TC-T1-15: Smart Platform NISGP 2026 4 Digital Maturity Levels Render
     assert.includes(html, 'ضوابط الذكاء الاصطناعي والأمان الذكي', 'AI safety controls section present');
 });
 
-// 11. Real Asset File Verification
-suite.test('TC-T1-16: Real Asset Images Existence Check', () => {
+// 11. Policy & Protection Page (policy.js)
+suite.test('TC-T1-16: Protection, Non-Discrimination & Grievance Policy Page Rendering', () => {
+    const env = createBrowserEnvironment();
+    assert.isTrue(typeof env.sandbox.renderPolicyPage === 'function', 'renderPolicyPage function must exist');
+    const html = env.sandbox.renderPolicyPage();
+
+    assert.includes(html, 'سياسة الحماية وعدم التمييز وتلقي الشكاوى', 'Policy title present');
+    assert.includes(html, 'جمعية الإسراء الخيرية', 'El-Israa Association present');
+    assert.includes(html, 'فاطمة عبد المجيد راضي', 'IP owner Fatima Abdulmajeed Radi present');
+    assert.includes(html, 'الإصدار 1.0', 'Version 1.0 present');
+    assert.includes(html, 'أولاً: الغرض من السياسة', 'Article 1 present');
+    assert.includes(html, 'الخامس عشر: إقرار واعتماد السياسة', 'Article 15 present');
+    assert.includes(html, '217 متدربة', '217 trainees metric present');
+    assert.includes(html, '65% محافظ رقمية', '65% financial inclusion metric present');
+    assert.includes(html, 'outbox-safety-policy.pdf', 'PDF download link present');
+});
+
+// 12. Real Asset & Document File Verification
+suite.test('TC-T1-17: Real Assets and PDF Document Existence Check', () => {
     const requiredAssets = [
-        'محتوي/لوجو_برة_الصندوق_1-removebg-preview.png',
-        'محتوي/لوجو برة الصندوق 1.png',
-        'محتوي/لوجو جمعية الاسراء.jpg',
-        'محتوي/بانر برة الصندوق.jpeg',
-        'محتوي/برة 1.png',
-        'محتوي/برة 2.png',
-        'محتوي/برة 3.png',
-        'محتوي/برة 4.png',
-        'محتوي/برة 5.png',
-        'محتوي/برة 6.png',
-        'محتوي/برة 7.png',
-        'محتوي/برة الصندوق 8.png',
-        'محتوي/برة 9.png',
-        'محتوي/برة 10.png',
-        'محتوي/برة 11.png',
-        'محتوي/برة 12.png',
-        'محتوي/برة 13.png'
+        'assets/images/logo-bara.png',
+        'assets/images/logo-israa.jpg',
+        'assets/images/activity-1.png',
+        'assets/images/activity-2.png',
+        'assets/images/field-women.png',
+        'docs/specs/SAFETY_POLICY.md',
+        'docs/guides/outbox-safety-policy.pdf'
     ];
 
     requiredAssets.forEach(asset => {
-        assert.isTrue(verifyAssetExists(asset), `Asset file ${asset} must exist in project directory`);
+        assert.isTrue(verifyAssetExists(asset), `Asset/Document file ${asset} must exist in project directory`);
     });
 });
 

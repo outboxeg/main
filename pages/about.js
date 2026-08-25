@@ -96,6 +96,34 @@ function renderAboutPage() {
                         تكامل تام وشراكة استراتيجية وثيقة بين الابتكار البيئي التعليمي للمشروع والمظلة القانونية والإدارية الميدانية لجمعية الإسراء الخيرية بمحافظة البحيرة، وموافقة مديرية التربية والتعليم بالبحيرة.
                     </p>
                 </div>
+
+                <!-- Certified Protection & Safety Policy Banner Card -->
+                <div class="card glass-card spring-hover" style="background: linear-gradient(135deg, rgba(240, 253, 244, 0.8), rgba(236, 253, 245, 0.9)); border: 1.5px solid #86EFAC; border-radius: var(--radius-lg); padding: 2rem; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 1.25rem;">
+                        <div style="width: 52px; height: 52px; background: #1F7A5A; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+                        </div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem;">
+                                <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin: 0; font-weight: 700;">سياسة الحماية وعدم التمييز وتلقي الشكاوى</h3>
+                                <span class="badge badge-certified" style="font-size: 0.78rem;">وثيقة معتمدة (الإصدار 1.0)</span>
+                            </div>
+                            <p style="color: #14532D; font-size: 0.92rem; margin: 0; line-height: 1.6;">
+                                بيئة عمل آمنة ومرنة، هيكل تنفيذي نسائي 100%، 6 برامج تدريبية لـ 217 متدربة، 65% شمول مالي، وسرية تامة للبلاغات.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <a href="#policy" class="btn btn-primary spring-hover" style="padding: 0.65rem 1.25rem; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                            <span>استعراض مواد السياسة الـ 15</span>
+                        </a>
+                        <a href="./docs/guides/outbox-safety-policy.pdf" download="outbox-safety-policy-2026.pdf" target="_blank" class="btn btn-outline" style="padding: 0.65rem 1.25rem; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; background: #FFFFFF;">
+                            <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                            <span>تحميل الـ PDF</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 

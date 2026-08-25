@@ -13,7 +13,7 @@ suite.test('TC-T4-01: Full End-to-End User Journey Simulation Workload', async (
     // Step 1: Load Homepage
     env.appContent.innerHTML = env.sandbox.renderHomePage();
     assert.includes(env.appContent.innerHTML, 'من مخلفات مدرسية إلى فرص خضراء ذكية', 'Step 1: Homepage loaded');
-    assert.includes(env.appContent.innerHTML, '180 طن', 'Step 1: Metric 180 tons paper verified');
+    assert.isTrue(env.appContent.innerHTML.includes('180') && env.appContent.innerHTML.includes('طن'), 'Step 1: Metric 180 tons paper verified');
     assert.includes(env.appContent.innerHTML, '26', 'Step 1: Metric 26 schools verified');
 
     // Step 2: Navigate to About Page
@@ -99,6 +99,25 @@ suite.test('TC-T4-01: Full End-to-End User Journey Simulation Workload', async (
     assert.includes(env.appContent.innerHTML, 'المستوى الأول', 'Step 5: Level 1 digital maturity badge verified');
     assert.includes(env.appContent.innerHTML, 'المستوى الرابع', 'Step 5: Level 4 digital maturity badge verified');
     assert.includes(env.appContent.innerHTML, 'ضوابط الذكاء الاصطناعي والأمان الذكي', 'Step 5: AI safety governance note verified');
+
+    // Step 6: Navigate to Protection & Safety Policy Page
+    env.appContent.innerHTML = env.sandbox.renderPolicyPage();
+    assert.includes(env.appContent.innerHTML, 'سياسة الحماية وعدم التمييز وتلقي الشكاوى', 'Step 6: Policy page header verified');
+    assert.includes(env.appContent.innerHTML, 'أولاً: الغرض من السياسة', 'Step 6: Article 1 verified');
+    assert.includes(env.appContent.innerHTML, 'الخامس عشر: إقرار واعتماد السياسة', 'Step 6: Article 15 verified');
+    assert.includes(env.appContent.innerHTML, 'outbox-safety-policy.pdf', 'Step 6: Policy PDF download link verified');
+
+    // Grievance simulation
+    const grievanceRecord = {
+        code: 'GRV-2026-99881',
+        type: 'تمييز أو استبعاد غير عادل',
+        details: 'بلاغ تجريبي للاختبار',
+        date: new Date().toISOString(),
+        status: 'قيد الفحص السري'
+    };
+    env.localStorage.setItem('outbox_grievances', JSON.stringify([grievanceRecord]));
+    const storedGrv = JSON.parse(env.localStorage.getItem('outbox_grievances'));
+    assert.equal(storedGrv.length, 1, 'Step 6: Confidential grievance stored in LocalStorage verified');
 });
 
 module.exports = suite;

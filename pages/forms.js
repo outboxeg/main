@@ -211,6 +211,14 @@ function renderFormsPage() {
                             </div>
                         </div>
 
+                        <div style="background: rgba(236, 72, 153, 0.08); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.88rem; color: #9D174D; display: flex; align-items: center; gap: 0.4rem;">
+                                <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+                                يحمي هذا التدريب <a href="#policy" style="color: #BE185D; font-weight: 700; text-decoration: underline;">سياسة الحماية وعدم التمييز المعتمدة 2026</a> ببيئة عمل مرنة وآمنة.
+                            </span>
+                            <a href="#policy" style="font-size: 0.85rem; color: #BE185D; font-weight: 600;">اقرأ ميثاق الحماية والتمكين ←</a>
+                        </div>
+
                         <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: #EC4899; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
                             <i data-lucide="send"></i> تسجيل اهتمام التمكين والتدريب
                         </button>

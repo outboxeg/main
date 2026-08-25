@@ -293,11 +293,20 @@ function createBrowserEnvironment() {
         }
     };
 
+    const sessionStorageStorage = {};
+    const sessionStorageMock = {
+        getItem(key) { return sessionStorageStorage[key] || null; },
+        setItem(key, val) { sessionStorageStorage[key] = String(val); },
+        removeItem(key) { delete sessionStorageStorage[key]; },
+        clear() { Object.keys(sessionStorageStorage).forEach(k => delete sessionStorageStorage[k]); }
+    };
+
     const lucideMock = { createIcons: () => {} };
 
     const windowMock = {
         document: documentMock,
         localStorage: localStorageMock,
+        sessionStorage: sessionStorageMock,
         location: { hash: '#home', href: 'http://localhost:8080/' },
         scrollTo: () => {},
         addEventListener(evt, fn) {
@@ -316,6 +325,7 @@ function createBrowserEnvironment() {
         window: windowMock,
         document: documentMock,
         localStorage: localStorageMock,
+        sessionStorage: sessionStorageMock,
         lucide: lucideMock,
         console: console,
         setTimeout: setTimeout,
@@ -341,6 +351,9 @@ function createBrowserEnvironment() {
         'pages/calculators.js',
         'pages/forms.js',
         'pages/knowledge.js',
+        'pages/policy.js',
+        'pages/admin.js',
+        'assets/js/app.js',
         'app.js'
     ];
 
@@ -354,6 +367,11 @@ function createBrowserEnvironment() {
 
     // Trigger DOMContentLoaded so app.js initializes handlers and router
     documentMock.dispatchEvent({ type: 'DOMContentLoaded' });
+
+    // Expose all global properties attached to window directly onto sandbox
+    Object.keys(windowMock).forEach(k => {
+        sandbox[k] = windowMock[k];
+    });
 
     return {
         sandbox,

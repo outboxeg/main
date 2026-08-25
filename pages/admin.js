@@ -77,6 +77,9 @@ function renderAdminPage() {
                     <button class="admin-tab-btn" data-tab="activitiesTab" style="padding: 0.85rem 1.5rem; border: none; background: none; font-weight: 700; font-size: 1rem; color: var(--color-text-secondary); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
                         <i data-lucide="book-open"></i> إدارة وسائل المكتبة الـ 9
                     </button>
+                    <button class="admin-tab-btn" data-tab="policyAdminTab" style="padding: 0.85rem 1.5rem; border: none; background: none; font-weight: 700; font-size: 1rem; color: var(--color-text-secondary); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="shield-alert" style="color: #DC2626;"></i> الشكاوى والإقرارات <span class="badge" id="grvCountBadge" style="font-size: 0.75rem; background: #FEE2E2; color: #991B1B;">0</span>
+                    </button>
                     <button class="admin-tab-btn" data-tab="systemTab" style="padding: 0.85rem 1.5rem; border: none; background: none; font-weight: 700; font-size: 1rem; color: var(--color-text-secondary); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
                         <i data-lucide="settings"></i> الأمان والإعدادات
                     </button>
@@ -494,6 +497,44 @@ function setupSheetStructure(sheet, headers) {
                             </div>
                         </div>
                     </div>
+                <!-- Tab: Grievances & Policy Acknowledgment Management -->
+                <div class="admin-pane" id="policyAdminTabPane" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h2 style="font-size: 1.4rem; color: var(--color-primary-dark); margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="shield-alert" style="color: #DC2626;"></i> سجل البلاغات والشكاوى السرية وإقرارات الالتزام
+                            </h2>
+                            <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">سجل محمي وخاص بالإدارة المعتمدة لفحص ومتابعة قضايا الحماية وعدم التمييز (الإصدار 1.0 / 2026).</p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <a href="./docs/guides/outbox-safety-policy.pdf" download="outbox-safety-policy-2026.pdf" target="_blank" class="btn btn-outline btn-sm" style="font-size: 0.85rem;">
+                                <i data-lucide="download"></i> تحميل السياسة (PDF)
+                            </a>
+                            <button class="btn btn-outline btn-sm" id="clearGrievancesBtn" style="border-color: #EF4444; color: #EF4444; font-size: 0.85rem;">
+                                <i data-lucide="trash-2"></i> مسح السجل
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grievances Submissions List -->
+                    <div class="card glass-card" style="padding: 1.75rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="inbox" style="color: #DC2626;"></i> البلاغات والشكاوى السرية الواردة
+                        </h3>
+                        <div id="grievancesListContainer">
+                            <!-- Loaded dynamically via initAdminLogic -->
+                        </div>
+                    </div>
+
+                    <!-- Digital Acknowledgment Records List -->
+                    <div class="card glass-card" style="padding: 1.75rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="file-check" style="color: #059669;"></i> إقرارات الاطلاع والالتزام الموقعة رقمياً
+                        </h3>
+                        <div id="acksListContainer">
+                            <!-- Loaded dynamically via initAdminLogic -->
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -870,6 +911,112 @@ function initAdminLogic() {
             if (typeof window.showToast === 'function') window.showToast('📦 تم تصدير ملف النسخة الاحتياطية JSON بنجاح');
         });
     });
+
+    // 6. Policy Grievances & Digital Acknowledgment Records
+    function renderPolicyAdminRecords() {
+        const grvContainer = document.getElementById('grievancesListContainer');
+        const acksContainer = document.getElementById('acksListContainer');
+        const badge = document.getElementById('grvCountBadge');
+
+        let grievances = [];
+        let acks = [];
+        try {
+            grievances = JSON.parse(localStorage.getItem('outbox_grievances') || '[]');
+            acks = JSON.parse(localStorage.getItem('outbox_policy_acks') || '[]');
+        } catch (e) {
+            console.error(e);
+        }
+
+        if (badge) badge.textContent = grievances.length + acks.length;
+
+        // Render Grievances
+        if (grvContainer) {
+            if (!grievances.length) {
+                grvContainer.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: var(--color-text-secondary);">
+                        <i data-lucide="shield-check" style="width: 40px; height: 40px; margin-bottom: 0.5rem; color: #10B981;"></i>
+                        <p style="margin: 0; font-size: 0.95rem;">لا توجد أي بلاغات أو شكاوى واردة حالياً (بيئة العمل والتدريب مستقرة وآمنة).</p>
+                    </div>
+                `;
+            } else {
+                let html = '<div style="display: flex; flex-direction: column; gap: 1rem;">';
+                grievances.forEach((g, idx) => {
+                    const dateStr = g.date ? new Date(g.date).toLocaleString('ar-EG') : 'غير محدد';
+                    html += `
+                        <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-right: 4px solid #DC2626; border-radius: var(--radius-sm); padding: 1.25rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="badge" style="background: #FEE2E2; color: #991B1B; font-size: 0.8rem; font-weight: 700;">${g.code || 'GRV'}</span>
+                                    <strong style="color: var(--color-primary-dark);">${g.type || 'شكوى'}</strong>
+                                    <span class="badge" style="background: #FEF3C7; color: #92400E; font-size: 0.75rem;">${g.status || 'قيد الفحص'}</span>
+                                </div>
+                                <span style="font-size: 0.82rem; color: var(--color-text-muted);">${dateStr}</span>
+                            </div>
+                            <div style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--color-text);">
+                                <strong>المبلّغ / التواصل:</strong> ${g.name || 'سري'} (${g.phone || 'بدون هاتف'}) | <strong>المكان:</strong> ${g.location || 'غير محدد'}
+                            </div>
+                            <div style="background: var(--color-surface); padding: 0.75rem; border-radius: 4px; font-size: 0.92rem; color: var(--color-text); line-height: 1.6; border: 1px dashed var(--color-border);">
+                                ${g.details}
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                grvContainer.innerHTML = html;
+            }
+        }
+
+        // Render Acknowledgments
+        if (acksContainer) {
+            if (!acks.length) {
+                acksContainer.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: var(--color-text-secondary);">
+                        <i data-lucide="file-text" style="width: 40px; height: 40px; margin-bottom: 0.5rem; color: var(--color-border);"></i>
+                        <p style="margin: 0; font-size: 0.95rem;">لم يتم تسجيل أي إقرارات التزام رقمية بعد.</p>
+                    </div>
+                `;
+            } else {
+                let html = '<div style="display: flex; flex-direction: column; gap: 0.75rem;">';
+                acks.forEach((a) => {
+                    html += `
+                        <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-right: 4px solid #059669; border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <div>
+                                <strong style="font-size: 1.05rem; color: var(--color-primary-dark);">${a.fullName}</strong>
+                                <div style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.2rem;">
+                                    الصفة: <strong>${a.role}</strong> (${a.entity}) | هاتف: ${a.phone}
+                                </div>
+                            </div>
+                            <div style="text-align: left;">
+                                <span class="badge badge-certified" style="font-size: 0.8rem;">معتمد وموثق ✅</span>
+                                <div style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.25rem;">${a.date}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                acksContainer.innerHTML = html;
+            }
+        }
+
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+    }
+
+    renderPolicyAdminRecords();
+
+    // Clear Grievances Action
+    const clearGrvBtn = document.getElementById('clearGrievancesBtn');
+    if (clearGrvBtn) {
+        clearGrvBtn.addEventListener('click', () => {
+            if (confirm('هل أنت متأكد من مسح جميع البلاغات والشكاوى والإقرارات المسجلة؟')) {
+                localStorage.removeItem('outbox_grievances');
+                localStorage.removeItem('outbox_policy_acks');
+                renderPolicyAdminRecords();
+                if (typeof window.showToast === 'function') window.showToast('تم مسح سجل الشكاوى والإقرارات');
+            }
+        });
+    }
 
     // Reset Defaults
     const resetBtn = document.getElementById('resetDefaultsBtn');

@@ -8,7 +8,7 @@ const { assert, createBrowserEnvironment, createTestSuite } = require('./test_ha
 const suite = createTestSuite('Tier 3: Cross-Feature Combinations');
 
 // 1. SPA Router View Builders Full Cycle Navigation
-suite.test('TC-T3-01: Full SPA Routing Cycle Across All 8 Pages', () => {
+suite.test('TC-T3-01: Full SPA Routing Cycle Across All 10 Pages', () => {
     const env = createBrowserEnvironment();
     const renderers = {
         'home': env.sandbox.renderHomePage,
@@ -18,7 +18,9 @@ suite.test('TC-T3-01: Full SPA Routing Cycle Across All 8 Pages', () => {
         'smart-platform': env.sandbox.renderSmartPlatformPage,
         'calculators': env.sandbox.renderCalculatorsPage,
         'forms': env.sandbox.renderFormsPage,
-        'knowledge': env.sandbox.renderKnowledgePage
+        'knowledge': env.sandbox.renderKnowledgePage,
+        'policy': env.sandbox.renderPolicyPage,
+        'admin': env.sandbox.renderAdminPage
     };
 
     Object.keys(renderers).forEach(pageKey => {

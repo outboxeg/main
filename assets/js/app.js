@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'calculators': renderCalculatorsPage,
         'forms': renderFormsPage,
         'knowledge': renderKnowledgePage,
+        'policy': renderPolicyPage,
+        'safety-policy': renderPolicyPage,
         'admin': renderAdminPage
     };
 
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuCloseIcon = document.getElementById('menuCloseIcon');
 
     // 2. Client-side Router Logic with Page Transition
-    window.navigateToPage = function navigateToPage(pageKey) {
+    function navigateToPage(pageKey) {
         if (!routes[pageKey]) pageKey = 'home';
 
         if (!appContent) return;
@@ -82,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (pageKey === 'knowledge' && typeof initKnowledgeFilters === 'function') {
                 initKnowledgeFilters();
             }
+            if ((pageKey === 'policy' || pageKey === 'safety-policy') && typeof initPolicyLogic === 'function') {
+                initPolicyLogic();
+            }
             if (pageKey === 'admin' && typeof initAdminLogic === 'function') {
                 initAdminLogic();
             }
@@ -91,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appContent.style.transform = 'translateY(0)';
         }, 150);
     }
+    window.navigateToPage = navigateToPage;
 
     // 3. Hash Change Listener & Initial Route Load
     function handleHashChange() {

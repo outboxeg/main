@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -97,6 +97,7 @@
             <nav class="nav-menu" id="navMenu" role="navigation" aria-label="التنقل الرئيسي">
                 <a href="#home" class="nav-link active" data-page="home">الرئيسية</a>
                 <a href="#about" class="nav-link" data-page="about">عن المشروع</a>
+                <a href="#policy" class="nav-link" data-page="policy">سياسة الحماية والأمان</a>
                 <a href="#how-it-works" class="nav-link" data-page="how-it-works">كيف نعمل</a>
                 <a href="#impact" class="nav-link" data-page="impact">الأثر والشفافية</a>
                 <a href="#smart-platform" class="nav-link" data-page="smart-platform">المنصة الذكية</a>
@@ -137,6 +138,7 @@
         <nav class="drawer-nav">
             <a href="#home" class="drawer-link active" data-page="home"><i data-lucide="home"></i> <span>الرئيسية</span></a>
             <a href="#about" class="drawer-link" data-page="about"><i data-lucide="info"></i> <span>عن المشروع والملكية الفكرية</span></a>
+            <a href="#policy" class="drawer-link" data-page="policy"><i data-lucide="shield-check"></i> <span>سياسة الحماية وتلقي الشكاوى (PDF)</span></a>
             <a href="#how-it-works" class="drawer-link" data-page="how-it-works"><i data-lucide="workflow"></i> <span>كيف نعمل</span></a>
             <a href="#impact" class="drawer-link" data-page="impact"><i data-lucide="bar-chart-3"></i> <span>لوحة الأثر والشفافية</span></a>
             <a href="#smart-platform" class="drawer-link" data-page="smart-platform"><i data-lucide="cpu"></i> <span>المنصة الذكية (NISGP)</span></a>
@@ -203,6 +205,7 @@
                 <ul class="footer-links">
                     <li><a href="#home"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>الرئيسية</span></a></li>
                     <li><a href="#about"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>عن المشروع والملكية الفكرية</span></a></li>
+                    <li><a href="#policy"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>سياسة الحماية والأمان (15 مادة)</span></a></li>
                     <li><a href="#how-it-works"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>كيف يعمل المشروع (8 مراحل)</span></a></li>
                     <li><a href="#impact"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>لوحة الأثر الاجتماعي والبيئي</span></a></li>
                     <li><a href="#smart-platform"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>معمارية المنصة الذكية (NISGP)</span></a></li>
@@ -216,8 +219,9 @@
                     <li><a href="#calculators"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>حاسبة الأثر الكربوني (WARM v16)</span></a></li>
                     <li><a href="#calculators"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>حاسبة توزيع العائد (40-25-10-25)</span></a></li>
                     <li><a href="#knowledge"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>معرض الأنشطة والوسائل التسع</span></a></li>
-                    <li><a href="#forms"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>تسجيل جمعية أهلية شريكة</span></a></li>
-                    <li><a href="#forms"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>ترشيح مدرسة خضراء ذكية</span></a></li>
+                    <li><a href="#policy" onclick="setTimeout(() => { if (typeof switchPolicyTab === 'function') switchPolicyTab('grievanceTab'); }, 200)"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>تقديم بلاغ / شكوى سرية</span></a></li>
+                    <li><a href="#policy" onclick="setTimeout(() => { if (typeof switchPolicyTab === 'function') switchPolicyTab('ackTab'); }, 200)"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>إقرار الالتزام الرقمي</span></a></li>
+                    <li><a href="./docs/guides/outbox-safety-policy.pdf" download="outbox-safety-policy-2026.pdf" target="_blank"><i data-lucide="download" style="width: 14px; height: 14px; color: #34D399;"></i> <span>تحميل السياسة الرسمية (PDF)</span></a></li>
                 </ul>
             </div>
 
@@ -233,6 +237,9 @@
                         <i data-lucide="shield-check" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; color: #34D399;"></i>
                         <strong>الشريك الميداني والجهة المنفذة:</strong> جمعية الإسراء الخيرية بفرهاش – دمنهور (إشهار رقم 1124 لسنة 2006) بالتعاون مع مديرية التربية والتعليم بالبحيرة.
                     </p>
+                    <a href="#policy" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-color: rgba(52,211,153,0.5); color: #34D399; text-align: center; text-decoration: none; border-radius: 6px;">
+                        <i data-lucide="file-check" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle;"></i> ميثاق وسياسة الحماية المعتمدة 2026
+                    </a>
                 </div>
             </div>
         </div>
@@ -245,7 +252,9 @@
                     <p style="margin: 0; font-size: 0.88rem; color: #E2ECE9;">© 2026 مشروع "برة الصندوق – المدرسة الخضراء الذكية". الملكية الفكرية: أ. فاطمة عبد المجيد راضي | الشريك الميداني الرسمي: جمعية الإسراء الخيرية بدمنهور (إشهار #1124).</p>
                 </div>
                 <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem; color: #34D399;">
-                    <span>النسخة 2.0 (Apple-Grade WCAG AAA)</span>
+                    <a href="#policy" style="color: #34D399; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+                        <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> سياسة الحماية وعدم التمييز (v1.0)
+                    </a>
                     <span>•</span>
                     <span>المبادرة الوطنية للمشروعات الخضراء الذكية 2026</span>
                     <a href="#admin" style="color: rgba(255,255,255,0.35); font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 200ms ease;" onmouseenter="this.style.color='#34D399'" onmouseleave="this.style.color='rgba(255,255,255,0.35)'">
