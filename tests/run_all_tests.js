@@ -7,13 +7,14 @@ const tier1Suite = require('./tier1_feature_coverage.test.js');
 const tier2Suite = require('./tier2_boundary_corner.test.js');
 const tier3Suite = require('./tier3_cross_feature.test.js');
 const tier4Suite = require('./tier4_real_world_workloads.test.js');
+const tier5Suite = require('./tier5_mobile_app_apk.test.js');
 
 async function runAllTests() {
     console.log(`\n==================================================================`);
     console.log(`  BARA EL-SANDOUQ – SMART GREEN SCHOOL E2E TEST SUITE RUNNER  `);
     console.log(`==================================================================\n`);
 
-    const suites = [tier1Suite, tier2Suite, tier3Suite, tier4Suite];
+    const suites = [tier1Suite, tier2Suite, tier3Suite, tier4Suite, tier5Suite];
     const summary = [];
     let totalPassed = 0;
     let totalFailed = 0;

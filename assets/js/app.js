@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'knowledge': renderKnowledgePage,
         'policy': renderPolicyPage,
         'safety-policy': renderPolicyPage,
+        'simulator': renderSimulatorPage,
         'admin': renderAdminPage
     };
 
@@ -86,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if ((pageKey === 'policy' || pageKey === 'safety-policy') && typeof initPolicyLogic === 'function') {
                 initPolicyLogic();
+            }
+                        if (pageKey === 'simulator' && typeof initSimulatorLogic === 'function') {
+                initSimulatorLogic();
             }
             if (pageKey === 'admin' && typeof initAdminLogic === 'function') {
                 initAdminLogic();

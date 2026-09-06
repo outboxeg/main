@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Official Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="./assets/images/logo-bara.png">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logo-bara.png">
+    <link rel="apple-touch-icon" href="./assets/images/logo-bara.png">
+
+  <title>محاكي هاتف برة الصندوق – تجربة التطبيق الميداني 📱</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-color: #0B1120;
+      --card-bg: #1E293B;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --primary: #1F7A5A;
+      --primary-light: #34D399;
+      --accent: #EA580C;
+      --whatsapp: #25D366;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Studio Header */
+    .studio-header {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      z-index: 100;
+    }
+
+    .studio-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .studio-brand img {
+      height: 38px;
+      width: auto;
+    }
+
+    .studio-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .studio-subtitle {
+      font-size: 0.78rem;
+      color: var(--primary-light);
+    }
+
+    .studio-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary-light);
+    }
+
+    .ctrl-btn.active {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Main Simulator Workspace */
+    .simulator-workspace {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+      background: radial-gradient(circle at 50% 30%, rgba(31, 122, 90, 0.15) 0%, transparent 65%);
+    }
+
+    /* Realistic 3D Smartphone Frame */
+    .phone-wrapper {
+      position: relative;
+      transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.55));
+    }
+
+    .phone-frame {
+      width: 412px;
+      height: 850px;
+      background: #18181B;
+      border-radius: 54px;
+      padding: 13px;
+      box-shadow: 
+        inset 0 0 4px 2px rgba(255, 255, 255, 0.18),
+        inset 0 0 0 4px #27272A,
+        0 0 0 3px #09090B,
+        0 20px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Landscape Mode */
+    .phone-wrapper.landscape .phone-frame {
+      width: 850px;
+      height: 412px;
+    }
+
+    /* Outer Hardware Buttons Simulation */
+    .phone-btn-power {
+      position: absolute;
+      right: -4px;
+      top: 170px;
+      width: 4px;
+      height: 60px;
+      background: #27272A;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .phone-btn-vol-up {
+      position: absolute;
+      left: -4px;
+      top: 140px;
+      width: 4px;
+      height: 50px;
+      background: #27272A;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .phone-btn-vol-down {
+      position: absolute;
+      left: -4px;
+      top: 205px;
+      width: 4px;
+      height: 50px;
+      background: #27272A;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Inner Screen Bezel */
+    .phone-screen {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: #F8FAF9;
+      border-radius: 42px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dynamic Island / Top Notch */
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 30px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+    }
+
+    .notch-camera {
+      width: 11px;
+      height: 11px;
+      background: #111827;
+      border-radius: 50%;
+      border: 2px solid #1F2937;
+    }
+
+    .notch-sensor {
+      width: 8px;
+      height: 8px;
+      background: #0F172A;
+      border-radius: 50%;
+    }
+
+    /* Simulated Status Bar */
+    .phone-status-bar {
+      height: 38px;
+      padding: 8px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #064E3B;
+      background: #FFFFFF;
+      border-bottom: 1px solid #F1F5F9;
+      z-index: 40;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      flex-shrink: 0;
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Bottom Home Indicator Bar */
+    .phone-home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 4.5px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    /* Embedded WebApp iFrame */
+    .phone-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #F8FAF9;
+    }
+
+    /* Sidebar Features Drawer */
+    .features-panel {
+      position: fixed;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      max-width: 320px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 90;
+    }
+
+    .features-panel h4 {
+      font-size: 0.95rem;
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .feature-item {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .feature-item i {
+      color: var(--primary-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* WhatsApp Live Inspector Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .wa-modal {
+      background: #0B141A;
+      border: 1px solid #1F2C34;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      animation: modalPop 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .wa-modal-header {
+      background: #202C33;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #E9EDEF;
+    }
+
+    .wa-modal-body {
+      padding: 1.5rem;
+      background: #0B141A;
+      background-image: radial-gradient(#111B21 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    .wa-bubble {
+      background: #005C4B;
+      color: #E9EDEF;
+      padding: 1rem 1.2rem;
+      border-radius: 12px 0 12px 12px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    @media (max-width: 1024px) {
+      .features-panel {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Studio Header Navigation Bar -->
+  <header class="studio-header">
+    <div class="studio-brand">
+      <img src="./assets/images/logo-bara.png" alt="برة الصندوق" onerror="this.src='./تطبيق_الهاتف/www/icons/icon-96x96.png'">
+      <div>
+        <h1 class="studio-title">محاكي تطبيق الهاتف الذكي 📱</h1>
+        <div class="studio-subtitle">بيئة تجربة تفاعلية مباشرة لمشروع برة الصندوق – المدرسة الخضراء الذكية</div>
+      </div>
+    </div>
+
+    <!-- Interactive Simulator Toolbar Controls -->
+    <div class="studio-controls">
+      <a href="./BaraElSandouq.apk" download="BaraElSandouq.apk" class="ctrl-btn" style="text-decoration: none; background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; border-color: #34D399; font-weight: 800;">
+        <i data-lucide="download" style="width: 17px; height: 17px;"></i>
+        <span>تحميل APK (4.8MB)</span>
+      </a>
+      <button class="ctrl-btn" onclick="toggleDeviceOrientation()" title="تدوير الهاتف">
+        <i data-lucide="rotate-cw" style="width: 17px; height: 17px;"></i>
+        <span>تدوير الشاشة</span>
+      </button>
+      <button class="ctrl-btn" onclick="reloadPhoneApp()" title="إعادة تشغيل التطبيق">
+        <i data-lucide="refresh-cw" style="width: 17px; height: 17px;"></i>
+        <span>إعادة تشغيل</span>
+      </button>
+      <button class="ctrl-btn" onclick="openFullscreenApp()" title="فتح في نافذة كاملة">
+        <i data-lucide="external-link" style="width: 17px; height: 17px;"></i>
+        <span>نافذة كاملة</span>
+      </button>
+      <a href="./index.html" class="ctrl-btn" style="text-decoration: none; background: rgba(31, 122, 90, 0.2); border-color: var(--primary);">
+        <i data-lucide="globe" style="width: 17px; height: 17px; color: var(--primary-light);"></i>
+        <span>الموقع الرئيسي</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Phone Canvas Area -->
+  <main class="simulator-workspace">
+
+    <!-- Realistic 3D Smartphone Device Mockup -->
+    <div class="phone-wrapper" id="phoneWrapper">
+      <!-- Outer Side Buttons -->
+      <div class="phone-btn-power"></div>
+      <div class="phone-btn-vol-up"></div>
+      <div class="phone-btn-vol-down"></div>
+
+      <!-- Main Phone Bezel Frame -->
+      <div class="phone-frame">
+        
+        <!-- Screen Canvas -->
+        <div class="phone-screen">
+          
+          <!-- Top Dynamic Island Notch -->
+          <div class="phone-notch">
+            <div class="notch-sensor"></div>
+            <div class="notch-camera"></div>
+          </div>
+
+          <!-- Live Digital Clock & Status Bar -->
+          <div class="phone-status-bar">
+            <span id="phoneClock">12:00</span>
+            <div class="status-icons">
+              <i data-lucide="wifi" style="width: 14px; height: 14px;"></i>
+              <span style="font-size: 0.72rem;">5G</span>
+              <i data-lucide="battery-charging" style="width: 16px; height: 16px;"></i>
+            </div>
+          </div>
+
+          <!-- The Live Mobile WebApp Iframe -->
+          <iframe src="./تطبيق_الهاتف/www/index.html" id="mobileAppIframe" class="phone-iframe" title="تطبيق الهاتف الميداني"></iframe>
+
+          <!-- Bottom Gesture Home Bar -->
+          <div class="phone-home-indicator"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quick Features Help Panel -->
+    <div class="features-panel">
+      <h4><i data-lucide="sparkles"></i> تجربة الميزات التفاعلية:</h4>
+      <div class="feature-item">
+        <i data-lucide="check"></i>
+        <span><strong>شريط التنقل السفلي:</strong> تنقل فوري بين الرئيسية، الحاسبات، النماذج، الأثر، والمزيد.</span>
+      </div>
+      <div class="feature-item">
+        <i data-lucide="check"></i>
+        <span><strong>حاسبة WARM v16:</strong> حسابات بيئية ومالية فورية بدون إنترنت (100% Offline).</span>
+      </div>
+      <div class="feature-item">
+        <i data-lucide="check"></i>
+        <span><strong>إرسال واتساب المباشر:</strong> اضغط على "إرسال عبر واتساب" في أي نموذج للتجهيز التلقائي.</span>
+      </div>
+
+      <!-- QR Code for instant phone installation -->
+      <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); text-align: center;">
+        <h4 style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #FFFFFF;"><i data-lucide="smartphone"></i> افتح وثبّت التطبيق على هاتفك:</h4>
+        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.4;">امسح رمز QR بكاميرا الهاتف (عند الاتصال بنفس شبكة Wi-Fi):</p>
+        <div style="background: #FFFFFF; padding: 10px; border-radius: 12px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://192.168.1.12:8080/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82_%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81/www/index.html" alt="رمز QR لتثبيت التطبيق على الهاتف" style="width: 150px; height: 150px; display: block;">
+        </div>
+        <div style="margin-top: 0.6rem; font-family: monospace; font-size: 0.76rem; color: var(--primary-light); direction: ltr; word-break: break-all;">
+          http://192.168.1.12:8080/
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // 1. Live Real-time Clock
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      const clockEl = document.getElementById('phoneClock');
+      if (clockEl) clockEl.textContent = `${hours}:${mins}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 2. Reload App Inside Phone Frame with Cache-Busting
+    function reloadPhoneApp() {
+      const iframe = document.getElementById('mobileAppIframe');
+      if (iframe) {
+        iframe.src = './تطبيق_الهاتف/www/index.html?t=' + Date.now();
+      }
+    }
+
+    // Unregister any old stale ServiceWorkers in simulator host
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+
+    // 3. Toggle Device Orientation
+    function toggleDeviceOrientation() {
+      const wrapper = document.getElementById('phoneWrapper');
+      if (wrapper) {
+        wrapper.classList.toggle('landscape');
+      }
+    }
+
+    // 4. Open in Fullscreen Standalone Tab
+    function openFullscreenApp() {
+      window.open('./تطبيق_الهاتف/www/index.html?t=' + Date.now(), '_blank');
+    }
+
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

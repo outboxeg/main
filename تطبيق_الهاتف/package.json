@@ -1,0 +1,13 @@
+{
+  "name": "bara-el-sandouq-mobile-app",
+  "version": "1.0.0",
+  "description": "تطبيق الهاتف الميداني لمنظومة برة الصندوق – المدرسة الخضراء الذكية بالبحيرة",
+  "main": "www/index.html",
+  "scripts": {
+    "start": "python -m http.server 8080 --directory www",
+    "sync": "python -c \"import shutil; shutil.rmtree('android/app/src/main/assets/www', ignore_errors=True); shutil.copytree('www', 'android/app/src/main/assets/www'); print('Synced www to Android assets')\""
+  },
+  "keywords": ["education", "recycling", "green-school", "offline", "pwa", "android", "apk"],
+  "author": "Fatima Abdulmajeed Radi & El-Israa Association",
+  "license": "ISC"
+}

@@ -1,0 +1,20 @@
+# Build & Package artifacts
+*.apk
+*.aab
+*.jar
+*.class
+*.dex
+
+# Android build outputs & caches
+**/build/
+**/.gradle/
+**/.idea/
+**/captures/
+.externalNativeBuild/
+local.properties
+
+# Temp & scratch scripts
+*.log
+scratch/
+tools_*.py
+test_*.html

@@ -352,6 +352,7 @@ function createBrowserEnvironment() {
         'pages/forms.js',
         'pages/knowledge.js',
         'pages/policy.js',
+        'pages/simulator.js',
         'pages/admin.js',
         'assets/js/app.js',
         'app.js'

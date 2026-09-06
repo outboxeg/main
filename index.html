@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Official Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="./assets/images/logo-bara.png">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logo-bara.png">
+    <link rel="apple-touch-icon" href="./assets/images/logo-bara.png">
+
     <title>برة الصندوق – المدرسة الخضراء الذكية | المنصة الرسمية والمبادرة الوطنية 2026</title>
     <meta name="description" content="مشروع برة الصندوق – المدرسة الخضراء الذكية لجمعية الإسراء الخيرية بدمنهور (إشهار #1124). تحويل مخلفات المدارس الورقية إلى أدوات تعليمية وفرص خضراء ذكية بدعم تمكين المرأة وذوي الإعاقة.">
     <meta name="keywords" content="برة الصندوق, المدرسة الخضراء الذكية, إعادة تدوير الورق, دمنهور, البحيرة, جمعية الإسراء الخيرية, فاطمة عبد المجيد راضي, المبادرة الوطنية للمشروعات الخضراء الذكية, NISGP 2026">
@@ -81,27 +87,26 @@
         </div>
     </div>
 
-    <!-- Header & Glassmorphism Navigation Bar -->
+        <!-- Header & Glassmorphism Navigation Bar -->
     <header class="navbar" id="navbar" role="banner">
         <div class="container navbar-container">
             <!-- Official Transparent Project Logo -->
             <a href="#home" class="logo-link" aria-label="الرئيسية - برة الصندوق المدرسة الخضراء الذكية">
-                <img src="./assets/images/logo-bara.png" alt="شعار برة الصندوق – المدرسة الخضراء الذكية" style="height: 44px; width: auto; object-fit: contain;">
+                <img src="./assets/images/logo-bara.png" alt="شعار برة الصندوق – المدرسة الخضراء الذكية" style="height: 42px; width: auto; object-fit: contain;">
                 <div class="brand-text-block">
                     <span class="brand-title">برة الصندوق</span>
                     <span class="brand-sub">المدرسة الخضراء الذكية</span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
+            <!-- Streamlined Desktop Navigation Links (Zero Overlap) -->
             <nav class="nav-menu" id="navMenu" role="navigation" aria-label="التنقل الرئيسي">
                 <a href="#home" class="nav-link active" data-page="home">الرئيسية</a>
                 <a href="#about" class="nav-link" data-page="about">عن المشروع</a>
-                <a href="#policy" class="nav-link" data-page="policy">سياسة الحماية والأمان</a>
                 <a href="#how-it-works" class="nav-link" data-page="how-it-works">كيف نعمل</a>
                 <a href="#impact" class="nav-link" data-page="impact">الأثر والشفافية</a>
-                <a href="#smart-platform" class="nav-link" data-page="smart-platform">المنصة الذكية</a>
-                <a href="#calculators" class="nav-link" data-page="calculators">الحاسبات التفاعلية</a>
+                <a href="#simulator" class="nav-link" data-page="simulator"><i data-lucide="smartphone" style="width: 15px; height: 15px; vertical-align: middle;"></i> <span>محاكي التطبيق 📱</span></a>
+                <a href="#calculators" class="nav-link" data-page="calculators">الحاسبات</a>
                 <a href="#knowledge" class="nav-link" data-page="knowledge">مكتبة الأنشطة</a>
             </nav>
 
@@ -109,11 +114,11 @@
             <div class="nav-actions">
                 <a href="#forms" class="btn btn-accent btn-nav-cta">
                     <i data-lucide="user-plus"></i>
-                    <span>سجّل جمعيتك / انضم</span>
+                    <span>سجّل جمعيتك</span>
                 </a>
                 <!-- Hidden Admin Access Button (CMS Dashboard) -->
-                <a href="#admin" class="btn-icon admin-trigger" title="لوحة تحكم المشرف" aria-label="دخول لوحة التحكم" style="opacity: 0.4; transition: opacity 200ms ease; color: #FFFFFF;" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.4'">
-                    <i data-lucide="settings"></i>
+                <a href="#admin" class="btn-icon admin-trigger" title="لوحة تحكم المشرف" aria-label="دخول لوحة التحكم" style="opacity: 0.5; transition: opacity 200ms ease; color: #FFFFFF;" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.5'">
+                    <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
                 </a>
                 <button class="btn-icon mobile-toggle" id="mobileToggle" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="mobile-drawer">
                     <i data-lucide="menu" id="menuOpenIcon"></i>
@@ -135,16 +140,18 @@
                 <i data-lucide="x"></i>
             </button>
         </div>
-        <nav class="drawer-nav">
+                <nav class="drawer-nav">
             <a href="#home" class="drawer-link active" data-page="home"><i data-lucide="home"></i> <span>الرئيسية</span></a>
+            <a href="#simulator" class="drawer-link" data-page="simulator" style="color: #34D399; font-weight: 700;"><i data-lucide="smartphone"></i> <span>محاكي تطبيق الهاتف 📱</span></a>
+            <a href="./BaraElSandouq.apk" download="BaraElSandouq.apk" class="drawer-link" style="color: #F59E0B; font-weight: 700;"><i data-lucide="download"></i> <span>تحميل ملف APK المباشر</span></a>
             <a href="#about" class="drawer-link" data-page="about"><i data-lucide="info"></i> <span>عن المشروع والملكية الفكرية</span></a>
             <a href="#policy" class="drawer-link" data-page="policy"><i data-lucide="shield-check"></i> <span>سياسة الحماية وتلقي الشكاوى (PDF)</span></a>
             <a href="#how-it-works" class="drawer-link" data-page="how-it-works"><i data-lucide="workflow"></i> <span>كيف نعمل</span></a>
             <a href="#impact" class="drawer-link" data-page="impact"><i data-lucide="bar-chart-3"></i> <span>لوحة الأثر والشفافية</span></a>
             <a href="#smart-platform" class="drawer-link" data-page="smart-platform"><i data-lucide="cpu"></i> <span>المنصة الذكية (NISGP)</span></a>
             <a href="#calculators" class="drawer-link" data-page="calculators"><i data-lucide="calculator"></i> <span>حاسبة الكربون والمالية</span></a>
-            <a href="#knowledge" class="drawer-link" data-page="knowledge"><i data-lucide="book-open"></i> <span>مكتبة الوسائل التعليمية</span></a>
-            <a href="#forms" class="drawer-link" data-page="forms"><i data-lucide="file-text"></i> <span>نماذج التسجيل والانضمام</span></a>
+            <a href="#knowledge" class="drawer-link" data-page="knowledge"><i data-lucide="book-open"></i> <span>مكتبة الأنشطة والألعاب الـ 9</span></a>
+            <a href="#forms" class="drawer-link" data-page="forms" style="color: var(--color-accent); font-weight: 700;"><i data-lucide="clipboard-pen-line"></i> <span>استمارات التسجيل والانضمام</span></a>
         </nav>
     </div>
 
@@ -199,11 +206,13 @@
                 </div>
             </div>
 
-            <!-- Footer Column 2: Quick Links -->
+                        <!-- Footer Column 2: Quick Links -->
             <div class="footer-col">
                 <h3 class="footer-title">صفحات المنصة</h3>
                 <ul class="footer-links">
                     <li><a href="#home"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>الرئيسية</span></a></li>
+                    <li><a href="#simulator" style="color: #34D399; font-weight: 700;"><i data-lucide="smartphone" style="width: 14px; height: 14px; color: #34D399;"></i> <span>محاكي التطبيق الميداني 📱</span></a></li>
+                    <li><a href="./BaraElSandouq.apk" download="BaraElSandouq.apk" style="color: #F59E0B; font-weight: 700;"><i data-lucide="download" style="width: 14px; height: 14px; color: #F59E0B;"></i> <span>تحميل تطبيق الأندرويد (APK)</span></a></li>
                     <li><a href="#about"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>عن المشروع والملكية الفكرية</span></a></li>
                     <li><a href="#policy"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>سياسة الحماية والأمان (15 مادة)</span></a></li>
                     <li><a href="#how-it-works"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>كيف يعمل المشروع (8 مراحل)</span></a></li>
@@ -212,10 +221,11 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 3: Calculators & Forms -->
+                        <!-- Footer Column 3: Calculators & Forms -->
             <div class="footer-col">
                 <h3 class="footer-title">الأدوات والنماذج</h3>
                 <ul class="footer-links">
+                    <li><a href="./simulator.html" target="_blank" style="color: #38BDF8; font-weight: 600;"><i data-lucide="external-link" style="width: 14px; height: 14px; color: #38BDF8;"></i> <span>محاكي الهاتف بشاشة كاملة ↗</span></a></li>
                     <li><a href="#calculators"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>حاسبة الأثر الكربوني (WARM v16)</span></a></li>
                     <li><a href="#calculators"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>حاسبة توزيع العائد (40-25-10-25)</span></a></li>
                     <li><a href="#knowledge"><i data-lucide="chevron-left" style="width: 14px; height: 14px; color: #34D399;"></i> <span>معرض الأنشطة والوسائل التسع</span></a></li>

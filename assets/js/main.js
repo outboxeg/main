@@ -1,13 +1,14 @@
 /* ===== PAGE: home ===== */
 /* ==========================================================================
-   Page Component: Home Page View (pages/home.js)
+   Page Component: Curated Home Page View (pages/home.js)
    Bara El-Sandouq – Smart Green School Project
+   Clean, Lightweight Gateway with Top 4 Metrics & Partner Highlights
    ========================================================================== */
 
 function renderHomePage() {
     return `
         <!-- Hero Section with Real Field Photo Background & Translucent Overlay -->
-        <section class="hero-section" style="position: relative; background: linear-gradient(rgba(11, 79, 63, 0.90), rgba(19, 78, 74, 0.95)), url('./assets/images/برة 13.png') center/cover no-repeat; color: #ffffff; padding: 4.5rem 0 4rem; overflow: hidden; border-bottom: 1px solid var(--color-border);">
+        <section class="hero-section" style="position: relative; background: linear-gradient(rgba(11, 79, 63, 0.90), rgba(19, 78, 74, 0.95)), url('./assets/images/برة 13.png') center/cover no-repeat; color: #ffffff; padding: 4.5rem 0 3.5rem; overflow: hidden; border-bottom: 1px solid var(--color-border);">
             <div class="container" style="position: relative; z-index: 2;">
                 <div style="max-width: 900px; margin: 0 auto; text-align: center;">
                     <!-- Badge & Institutional Pill -->
@@ -20,13 +21,13 @@ function renderHomePage() {
                         <span>محافظة البحيرة – دمنهور</span>
                     </div>
                     
-                    <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.5rem); font-family: 'Noto Naskh Arabic', serif; font-weight: 700; line-height: 1.3; margin-bottom: 1.25rem; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.2rem); font-family: 'Noto Naskh Arabic', serif; font-weight: 700; line-height: 1.3; margin-bottom: 1.25rem; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
                         <span class="hero-stagger-word">برة الصندوق</span>
                         <span class="hero-stagger-word" style="color: #FDBA74;">–</span>
                         <span class="hero-stagger-word">المدرسة الخضراء الذكية</span>
                     </h1>
                     
-                    <p class="hero-desc" style="font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: #E2ECE9; line-height: 1.8; margin-bottom: 2rem; font-weight: 400; max-width: 820px; margin-right: auto; margin-left: auto;">
+                    <p class="hero-desc" style="font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #E2ECE9; line-height: 1.8; margin-bottom: 2rem; font-weight: 400; max-width: 820px; margin-right: auto; margin-left: auto;">
                         من مخلفات مدرسية إلى فرص خضراء ذكية | مشروع بيئي مجتمعي تعليمي متكامل لجمع وفرز وتحويل الورق والكرتون بالمدارس إلى وسائل تعلم تفاعلية ودعم مجتمعي وتمكين للمرأة وذوي الهمم.
                     </p>
 
@@ -38,16 +39,16 @@ function renderHomePage() {
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
                             <i data-lucide="building-2" style="color: #34D399; width: 18px; height: 18px; flex-shrink: 0;"></i>
-                            <span><strong>الشريك الميداني والجهة المنفذة:</strong> جمعية الإسراء الخيرية بدمنهور (إشهار #1124)</span>
+                            <span><strong>الجهة المنفذة:</strong> جمعية الإسراء الخيرية بدمنهور (إشهار #1124)</span>
                         </div>
                     </div>
 
-                    <div class="hero-btns" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
+                    <div class="hero-btns" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
                         <a href="#forms" class="btn btn-accent spring-hover" style="padding: 0.85rem 2rem; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
                             <i data-lucide="user-plus" style="width: 18px; height: 18px;"></i>
                             <span>سجّل جمعيتك / انضم</span>
                         </a>
-                        <a href="#homeCalculatorsSection" class="btn btn-outline spring-hover" style="padding: 0.85rem 2rem; font-size: 1.05rem; border-color: rgba(255,255,255,0.7); color: #ffffff; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; backdrop-filter: blur(8px); background: rgba(255,255,255,0.1);">
+                        <a href="#calculators" class="btn btn-outline spring-hover" style="padding: 0.85rem 2rem; font-size: 1.05rem; border-color: rgba(255,255,255,0.7); color: #ffffff; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; backdrop-filter: blur(8px); background: rgba(255,255,255,0.1);">
                             <i data-lucide="calculator" style="width: 18px; height: 18px;"></i>
                             <span>جرب الحاسبات المباشرة</span>
                         </a>
@@ -56,461 +57,193 @@ function renderHomePage() {
             </div>
         </section>
 
-        <!-- Official Field Partner & Institutional Accreditation Cards Section -->
-        <section class="section" style="background: var(--color-surface); padding: 3.5rem 0; border-bottom: 1px solid var(--color-border);">
+        <!-- Concise Key Verified Metrics (Top 4 Numbers Only) -->
+        <section class="section" style="background: var(--color-bg); padding: 3.5rem 0 3rem;">
             <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;">
+                <div class="section-header" style="text-align: center; margin-bottom: 2.25rem;">
                     <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
-                        <i data-lucide="shield-check"></i> الاعتماد والهيكل المؤسسي
+                        <i data-lucide="bar-chart-2"></i> مؤشرات الأثر الميداني الأساسية
                     </div>
-                    <h2 class="section-title" style="font-size: 2rem; color: var(--color-primary-dark); margin-top: 0.4rem;">الشريك الميداني والاعتماد الرسمي</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 650px; margin: 0.4rem auto 0;">إطار عمل قانوني ومؤسسي معتمد يضمن استدامة التنفيذ والشفافية التامة.</p>
+                    <h2 class="section-title" style="font-size: 1.9rem; color: var(--color-primary-dark); margin-top: 0.3rem;">أبرز نتائج الميدان الموثقة</h2>
+                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 600px; margin: 0.3rem auto 0;">ملخص موجز لنتائج المنظومة بالتعاون مع مدارس وسيدات محافظة البحيرة.</p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
-                    <!-- Card 1: Main Project Brand -->
-                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
-                        <div class="partner-logo-box" style="height: 100px; background: #FFFFFF; border-radius: var(--radius-md); padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1.25rem;">
-                            <img src="./assets/images/لوجو_برة_الصندوق_1-removebg-preview.png" alt="شعار برة الصندوق – المدرسة الخضراء الذكية" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto;">
-                        </div>
-                        <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">مشروع "برة الصندوق – المدرسة الخضراء الذكية"</h3>
-                        <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
-                            نموذج مبتكر لإعادة استخدام مخلفات المدارس الورقية والكرتونية وتحويلها لفرص تعليمية واقتصادية خضراء.
-                        </p>
-                        <span class="badge badge-certified" style="font-size: 0.8rem; display: inline-flex;"><i data-lucide="award"></i> الملكية الفكرية: أ. فاطمة عبد المجيد راضي</span>
-                    </div>
-
-                    <!-- Card 2: Official Field Partner (El-Israa Association) -->
-                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
-                        <div class="partner-logo-box" style="height: 100px; background: #FFFFFF; border-radius: var(--radius-md); padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1.25rem;">
-                            <img src="./assets/images/لوجو جمعية الاسراء.jpg" alt="شعار جمعية الإسراء الخيرية لتنمية المجتمع بدمنهور" style="max-height: 80px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
-                        </div>
-                        <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">جمعية الإسراء الخيرية بدمنهور</h3>
-                        <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
-                            <strong>الشريك الميداني والجهة المنفذة المعتمدة:</strong> جمعية الإسراء بفرهاش – دمنهور (إشهار رقم 1124 لسنة 2006) بالتعاون المباشر مع مديرية التربية والتعليم بالبحيرة.
-                        </p>
-                        <span class="badge badge-certified" style="font-size: 0.8rem; display: inline-flex;"><i data-lucide="check-circle-2"></i> الشريك الميداني والمنفذ الرسمي</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Metric Counter Cards Section (All Numbers & Key Stats) -->
-        <section class="section" style="background: var(--color-bg); padding: 4rem 0;">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
-                        <i data-lucide="bar-chart-2"></i> لوحة مؤشرات الأثر الميداني الشاملة
-                    </div>
-                    <h2 class="section-title" style="font-size: 2.1rem; color: var(--color-primary-dark); margin-top: 0.4rem;">أرقام ومؤشرات الأثر الميداني الموثقة</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 650px; margin: 0.4rem auto 0;">نتائج ميدانية واقعية حققها المشروع بالتعاون بين جمعية الإسراء والمدارس والسيدات بالبحيرة.</p>
-                </div>
-
-                <div class="metrics-grid" id="homeMetricsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                <div class="metrics-grid" id="homeMetricsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
                     <!-- Metric 1: Paper Saved -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(31, 122, 90, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
+                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 1.75rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                        <div style="width: 50px; height: 50px; margin: 0 auto 0.75rem; background: rgba(31, 122, 90, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
                         </div>
-                        <div class="metric-val counter-value" data-target="180" data-suffix=" طن" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0 طن</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            ورق وكرتون مجمع <span class="badge badge-certified" style="font-size: 0.72rem;">✅ موثق</span>
+                        <div class="metric-val counter-value" data-target="180" data-suffix=" طن" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">180 طن</div>
+                        <div class="metric-lbl" style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-top: 0.4rem;">
+                            ورق وكرتون مجمع <span class="badge badge-certified" style="font-size: 0.7rem;">✅ موثق</span>
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">جمع وفرز وإعادة تدوير من المدارس والمؤسسات</p>
                     </div>
 
                     <!-- Metric 2: Participating Schools -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(28, 154, 139, 0.12); color: var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="school" style="width: 28px; height: 28px;"></i>
+                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 1.75rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                        <div style="width: 50px; height: 50px; margin: 0 auto 0.75rem; background: rgba(28, 154, 139, 0.12); color: var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="school" style="width: 24px; height: 24px;"></i>
                         </div>
-                        <div class="metric-val counter-value" data-target="26" data-suffix=" مدرسة" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0 مدرسة</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            مدرسة منفذ بها <span class="badge badge-certified" style="font-size: 0.72rem;">✅ موثق</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">مدرسة حكومية وخاصة بمديرية التربية والتعليم بالبحيرة</p>
-                    </div>
-
-                    <!-- Metric 3: Disability Inclusion -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(234, 88, 12, 0.12); color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="heart" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div class="metric-val counter-value" data-target="8" data-suffix="%" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0%</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            مشاركة ذوي الهمم <span class="badge badge-certified" style="font-size: 0.72rem;">✅ موثق</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">دمج وتدريب وتزويد الأطفال بالأدوات المساعدة</p>
-                    </div>
-
-                    <!-- Metric 4: Women Empowerment -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(236, 72, 153, 0.12); color: #EC4899; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="users" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div class="metric-val counter-value" data-target="40" data-suffix="%" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0%</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            تمكين المرأة والمعيلات <span class="badge badge-certified" style="font-size: 0.72rem;">✅ معتمد</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">حصة مالية مخصصة لمكافآت السيدات الحرفيات والمعيلات</p>
-                    </div>
-
-                    <!-- Metric 5: Active Students -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(31, 122, 90, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="user-check" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div class="metric-val counter-value" data-target="1500" data-suffix="+" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0+</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            طالب مشارك بفعالية <span class="badge badge-certified" style="font-size: 0.72rem;">✅ موثق</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">مشاركون في ورش الفرز والأنشطة البيئية</p>
-                    </div>
-
-                    <!-- Metric 6: Upcycled Educational Tools -->
-                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1rem; background: rgba(28, 154, 139, 0.12); color: var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="book-open" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div class="metric-val counter-value" data-target="9" data-suffix=" وسائل" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">0 وسيلة</div>
-                        <div class="metric-lbl" style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-top: 0.5rem;">
-                            وسائل تعليمية مبتكرة <span class="badge badge-certified" style="font-size: 0.72rem;">✅ مصنعة</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.5;">أدوات ولوحات تفاعلية مصنعة من الورق المعاد استخدامه</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive Calculators Directly on Homepage (الحاسبات التفاعلية المباشرة) -->
-        <section class="section" id="homeCalculatorsSection" style="background: var(--color-surface); padding: 4.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
-                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); background: rgba(31, 122, 90, 0.1); padding: 0.4rem 1rem; border-radius: var(--radius-full); font-weight: 700; font-size: 0.9rem;">
-                        <i data-lucide="calculator"></i> أدوات الحساب المباشرة والتفاعلية
-                    </div>
-                    <h2 class="section-title" style="font-size: 2.2rem; color: var(--color-primary-dark); margin-top: 0.5rem;">حاسبة الأثر البيئي والمالي بالصفحة الرئيسية</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 750px; margin: 0.5rem auto 0;">
-                        احسب مباشرةً مقدار خفض الانبعاثات الكربونية (معاملات EPA WARM v16) واعرف تفاصيل التوزيع العادل للمتحصلات المالية (40-25-10-25).
-                    </p>
-                </div>
-
-                <!-- 1. Carbon Savings Calculator Card -->
-                <div class="calculator-card glass-card spring-hover" id="carbonCalcCard" style="margin-bottom: 3rem; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-default); background: var(--color-surface);">
-                    <div class="calc-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-                        <div class="calc-icon" style="background: rgba(31, 122, 90, 0.12); color: var(--color-primary); padding: 0.85rem; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="leaf" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.4rem; margin: 0; color: var(--color-primary-dark);">1. حاسبة الأثر الكربوني للورق (EPA WARM v16)</h3>
-                            <p style="color: var(--color-text-secondary); font-size: 0.92rem; margin-top: 0.25rem; margin-bottom: 0;">
-                                احتساب تقديري لخفض انبعاثات مكافئ ثاني أكسيد الكربون (CO₂e) والتكافؤات البيئية الناتجة عن تدوير الورق والكتب.
-                            </p>
+                        <div class="metric-val counter-value" data-target="26" data-suffix=" مدرسة" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">26 مدرسة</div>
+                        <div class="metric-lbl" style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-top: 0.4rem;">
+                            مدرسة منفذ بها <span class="badge badge-certified" style="font-size: 0.7rem;">✅ موثق</span>
                         </div>
                     </div>
 
-                    <div class="calc-form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                        <div class="calc-inputs" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <div class="form-group">
-                                <label class="form-label" for="calcMode" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem; display: block;">طريقة الحساب:</label>
-                                <select class="form-select" id="calcMode" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-bg); font-family: inherit; font-size: 1rem;">
-                                    <option value="weight">إدخال الوزن المباشر (بالكيلوجرام)</option>
-                                    <option value="students">إدخال عدد الطلاب (افتراضي 40 كجم/طالب سنوياً)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group" id="weightInputGroup" style="display: flex; flex-direction: column;">
-                                <label class="form-label" for="paperWeight" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">وزن الخامة (كجم):</label>
-                                <input type="number" class="form-input" id="paperWeight" value="1000" min="0" step="any" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-family: inherit; font-size: 1rem;">
-                            </div>
-
-                            <div class="form-group" id="studentsInputGroup" style="display: none; flex-direction: column;">
-                                <label class="form-label" for="studentCount" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">عدد الطلاب المشاركين:</label>
-                                <input type="number" class="form-input" id="studentCount" value="170" min="0" step="1" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-family: inherit; font-size: 1rem;">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label" for="materialType" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem; display: block;">نوع المادة الورقية:</label>
-                                <select class="form-select" id="materialType" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-bg); font-family: inherit; font-size: 1rem;">
-                                    <option value="mixed">ورق مختلط (3.99 كجم CO₂e / كجم)</option>
-                                    <option value="notebooks">كراسات ودفاتر كتابة (4.40 كجم CO₂e / كجم)</option>
-                                    <option value="textbooks" selected>كتب مدرسية مستعملة (4.66 كجم CO₂e / كجم)</option>
-                                    <option value="cardboard">كرتون مموج (3.66 كجم CO₂e / كجم)</option>
-                                </select>
-                            </div>
+                    <!-- Metric 3: Women Empowerment (40%) -->
+                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 1.75rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                        <div style="width: 50px; height: 50px; margin: 0 auto 0.75rem; background: rgba(236, 72, 153, 0.12); color: #EC4899; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="users" style="width: 24px; height: 24px;"></i>
                         </div>
+                        <div class="metric-val counter-value" data-target="40" data-suffix="%" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">40%</div>
+                        <div class="metric-lbl" style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-top: 0.4rem;">
+                            تمكين المرأة والعائد <span class="badge badge-certified" style="font-size: 0.7rem;">(10 فرق / 217 سيدة)</span>
+                        </div>
+                    </div>
 
-                        <div class="calc-result-box" style="background: linear-gradient(135deg, var(--color-primary-dark) 0%, #134E4A 100%); padding: 1.75rem; border-radius: var(--radius-lg); color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; text-align: center; box-shadow: var(--shadow-default);">
-                            <div>
-                                <div style="display: inline-flex; padding: 0.75rem; background: rgba(255, 255, 255, 0.15); border-radius: 50%; margin-bottom: 0.75rem;">
-                                    <i data-lucide="cloud-off" style="width: 32px; height: 32px; color: #A7F3D0;"></i>
-                                </div>
-                                <div style="font-size: 0.92rem; color: #D1E8E2; margin-bottom: 0.25rem;">الانبعاثات المتجنبة تقديرياً</div>
-                                <div class="result-big-val" id="carbonResultVal" style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">4,662.78</div>
-                                <div style="font-size: 1.1rem; font-weight: 700; color: #A7F3D0; margin-top: 0.25rem;">كجم CO₂e متجنب</div>
-                            </div>
-
-                            <!-- Environmental Equivalencies -->
-                            <div class="equivalencies-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
-                                <div style="background: rgba(255, 255, 255, 0.1); padding: 0.75rem 0.5rem; border-radius: var(--radius-md);">
-                                    <i data-lucide="trees" style="width: 18px; height: 18px; color: #A7F3D0;"></i>
-                                    <div style="font-size: 0.72rem; color: #D1E8E2; margin-top: 0.25rem;">أشجار محمية</div>
-                                    <div id="treesSavedVal" style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF;">17.0</div>
-                                </div>
-                                <div style="background: rgba(255, 255, 255, 0.1); padding: 0.75rem 0.5rem; border-radius: var(--radius-md);">
-                                    <i data-lucide="droplets" style="width: 18px; height: 18px; color: #A7F3D0;"></i>
-                                    <div style="font-size: 0.72rem; color: #D1E8E2; margin-top: 0.25rem;">مياه موفرة</div>
-                                    <div id="waterSavedVal" style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF;">26,500 L</div>
-                                </div>
-                                <div style="background: rgba(255, 255, 255, 0.1); padding: 0.75rem 0.5rem; border-radius: var(--radius-md);">
-                                    <i data-lucide="trash-2" style="width: 18px; height: 18px; color: #A7F3D0;"></i>
-                                    <div style="font-size: 0.72rem; color: #D1E8E2; margin-top: 0.25rem;">مدفن موفر</div>
-                                    <div id="landfillSavedVal" style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF;">3.3 m³</div>
-                                </div>
-                            </div>
+                    <!-- Metric 4: Disability Inclusion (8%) -->
+                    <div class="card glass-card spring-hover metric-card" style="text-align: center; padding: 1.75rem 1.25rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                        <div style="width: 50px; height: 50px; margin: 0 auto 0.75rem; background: rgba(234, 88, 12, 0.12); color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="heart" style="width: 24px; height: 24px;"></i>
+                        </div>
+                        <div class="metric-val counter-value" data-target="8" data-suffix="%" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif; line-height: 1.2;">8%</div>
+                        <div class="metric-lbl" style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-top: 0.4rem;">
+                            مشاركة ذوي الهمم <span class="badge badge-certified" style="font-size: 0.7rem;">✅ موثق</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Revenue Distribution Calculator Card -->
-                <div class="calculator-card glass-card spring-hover" id="revenueCalcCard" style="border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-default); background: var(--color-surface);">
-                    <div class="calc-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-                        <div class="calc-icon" style="background: rgba(28, 154, 139, 0.12); color: var(--color-secondary); padding: 0.85rem; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="pie-chart" style="width: 28px; height: 28px;"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.4rem; margin: 0; color: var(--color-primary-dark);">2. حاسبة توزيع متحصلات بيع الخام (40 - 25 - 10 - 25)</h3>
-                            <p style="color: var(--color-text-secondary); font-size: 0.92rem; margin-top: 0.25rem; margin-bottom: 0;">
-                                أدخل إجمالي حصيلة البيع لرؤية توزيع النسب الشفاف بين التمكين ودعم المدارس وجمعية الإسراء واللوجستيات.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="calc-form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                        <div class="calc-inputs" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <div class="form-group">
-                                <label class="form-label" for="totalRevenueInput" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem; display: block;">إجمالي المتحصلات المالية (جنيه مصري):</label>
-                                <input type="number" class="form-input" id="totalRevenueInput" value="100000" min="0" step="1000" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-family: inherit; font-size: 1rem;">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label" for="logisticsCostInput" style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem; display: block;">تكاليف النقل والفرز الميداني التقديرية (ج.م):</label>
-                                <input type="number" class="form-input" id="logisticsCostInput" value="10200" min="0" step="500" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-family: inherit; font-size: 1rem;">
-                            </div>
-
-                            <div style="background: var(--color-muted); padding: 1.1rem; border-radius: var(--radius-md); border-right: 4px solid var(--color-secondary);">
-                                <h4 style="margin-top: 0; margin-bottom: 0.4rem; color: var(--color-primary-dark); font-size: 0.95rem;">قواعد التوزيع الشفاف (40-25-10-25):</h4>
-                                <ul style="margin: 0; padding-right: 1.25rem; font-size: 0.83rem; color: var(--color-text-secondary); line-height: 1.6;">
-                                    <li><strong>40% السيدات والفتيات:</strong> مكافآت وتدريبات إنتاجية وحرفية لتمكين المرأة.</li>
-                                    <li><strong>25% صندوق المدارس الخضراء:</strong> خامات وأدوات ورعاية الأنشطة والطلاب.</li>
-                                    <li><strong>10% جمعية الإسراء بدمنهور:</strong> الشريك الميداني والمصروفات الإدارية والميدانية.</li>
-                                    <li><strong>25% النقل والبحوث:</strong> تكاليف اللوجستيات والفائض للتطوير وإعادة الاستثمار.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 style="margin-top: 0; margin-bottom: 1.25rem; color: var(--color-primary-dark);">تفاصيل التوزيع المالي المحسوب:</h4>
-                            
-                            <div class="revenue-bars" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                                <div class="revenue-bar-item">
-                                    <div class="bar-info" style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.95rem;">
-                                        <span>السيدات والفتيات (40%)</span>
-                                        <span id="womenShareVal" style="color: #EC4899; font-weight: 800;">40,000 ج.م</span>
-                                    </div>
-                                    <div class="bar-track" style="background: var(--color-muted); height: 12px; border-radius: 6px; overflow: hidden;">
-                                        <div class="bar-fill" style="width: 40%; background: #EC4899; height: 100%; transition: width 300ms ease;"></div>
-                                    </div>
-                                </div>
-
-                                <div class="revenue-bar-item">
-                                    <div class="bar-info" style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.95rem;">
-                                        <span>المدرسة والطلاب والأنشطة (25%)</span>
-                                        <span id="schoolShareVal" style="color: var(--color-primary); font-weight: 800;">25,000 ج.م</span>
-                                    </div>
-                                    <div class="bar-track" style="background: var(--color-muted); height: 12px; border-radius: 6px; overflow: hidden;">
-                                        <div class="bar-fill" style="width: 25%; background: var(--color-primary); height: 100%; transition: width 300ms ease;"></div>
-                                    </div>
-                                </div>
-
-                                <div class="revenue-bar-item">
-                                    <div class="bar-info" style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.95rem;">
-                                        <span>جمعية الإسراء – الشريك الميداني (10%)</span>
-                                        <span id="assocShareVal" style="color: var(--color-secondary); font-weight: 800;">10,000 ج.م</span>
-                                    </div>
-                                    <div class="bar-track" style="background: var(--color-muted); height: 12px; border-radius: 6px; overflow: hidden;">
-                                        <div class="bar-fill" style="width: 10%; background: var(--color-secondary); height: 100%; transition: width 300ms ease;"></div>
-                                    </div>
-                                </div>
-
-                                <div class="revenue-bar-item">
-                                    <div class="bar-info" style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.95rem;">
-                                        <span>الفائض التشغيلي المتبقي بعد خصم النقل</span>
-                                        <span id="surplusShareVal" style="color: var(--color-accent); font-weight: 800;">14,800 ج.م</span>
-                                    </div>
-                                    <div class="bar-track" style="background: var(--color-muted); height: 12px; border-radius: 6px; overflow: hidden;">
-                                        <div class="bar-fill" id="surplusBarFill" style="width: 14.8%; background: var(--color-accent); height: 100%; transition: width 300ms ease;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Real Field Proof Photo Gallery (التنفيذ الميداني بالصور الحقيقية) -->
-        <section class="section" style="background: var(--color-bg); padding: 4.5rem 0;">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
-                        <i data-lucide="camera"></i> المعرض الميداني الحقيقي
-                    </div>
-                    <h2 class="section-title" style="font-size: 2.1rem; color: var(--color-primary-dark); margin-top: 0.4rem;">صور التنفيذ الميداني والفعاليات</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 650px; margin: 0.4rem auto 0;">مشاهد ميدانية حقيقية توثق ورش التوعية وتمكين السيدات والأنشطة بالبحيرة.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
-                    <!-- Photo 1: Women Empowerment Session -->
-                    <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
-                        <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./assets/images/برة 12.png" alt="ورشة عمل تمكين المرأة والتوعية المجتمعية" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                        </div>
-                        <div style="padding: 1.25rem;">
-                            <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="users"></i> تمكين المرأة 40%</span>
-                            <h4 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">ورشة توعوية لتمكين السيدات بدمنهور</h4>
-                            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; margin: 0;">تدريب الأمهات والسيدات على فرز المخلفات وتصنيع الوسائل التعليمية البسيطة بمقر الجمعية.</p>
-                        </div>
-                    </div>
-
-                    <!-- Photo 2: Leadership & Community Group -->
-                    <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
-                        <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./assets/images/برة 13.png" alt="صورة جماعية لقيادات مشروع برة الصندوق والأسر" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                        </div>
-                        <div style="padding: 1.25rem;">
-                            <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="award"></i> القيادة الميدانية</span>
-                            <h4 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">فريق العمل والقيادات النسائية للأشراف</h4>
-                            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; margin: 0;">أ. فاطمة عبد المجيد راضي مع مجلس إدارة جمعية الإسراء والمتدربين والأطفال المشاركين.</p>
-                        </div>
-                    </div>
-
-                    <!-- Photo 3: Student Artwork Workshop -->
-                    <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
-                        <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./assets/images/برة 10.png" alt="نشاط الفنون والرسومات بالورق المعاد استخدامه" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                        </div>
-                        <div style="padding: 1.25rem;">
-                            <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="sparkles"></i> الأنشطة الطلابية</span>
-                            <h4 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">ورش الرسم والتعلم بالممارسة بالأوراق</h4>
-                            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; margin: 0;">أطفال المدارس والجمعية يعرضون لوحاتهم المبتكرة المصنوعة من الورق المستعمل.</p>
-                        </div>
-                    </div>
-
-                    <!-- Photo 4: Official Banner in Action -->
-                    <div class="card glass-card spring-hover" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); background: #FFFFFF; border: 1px solid var(--color-border);">
-                        <div style="height: 200px; width: 100%; overflow: hidden; background: var(--color-muted);">
-                            <img src="./assets/images/بانر برة الصندوق.jpeg" alt="البانر الميداني الحكومي المعتمد للمشروع" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                        </div>
-                        <div style="padding: 1.25rem;">
-                            <span class="badge badge-certified" style="font-size: 0.75rem; margin-bottom: 0.5rem;"><i data-lucide="shield-check"></i> اعتماد وزارة التربية والتعليم</span>
-                            <h4 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">البانر الرسمي المعتمد بالفعاليات</h4>
-                            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; margin: 0;">البانر الرسمي متضمناً موافقة التعليم ورعاية التضامن الاجتماعي وتنفيذ جمعية الإسراء.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6-Stage Visual Value Chain Section -->
-        <section class="section" style="background: var(--color-surface); padding: 4.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
-                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
-                        <i data-lucide="git-merge"></i> سلسلة القيمة المضافة الـ 6
-                    </div>
-                    <h2 class="section-title" style="font-size: 2.1rem; color: var(--color-primary-dark); margin-top: 0.4rem;">دورة عمل المنظومة الميدانية</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 700px; margin: 0.4rem auto 0;">مسار محكم يضمن التحول من مخلفات مدرسية إلى وسائل تعلم مستدامة ومنافع مجتمعية.</p>
-                </div>
-
-                <div class="value-chain-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;">
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-primary);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-primary-dark); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">1</span>
-                            <i data-lucide="filter" style="width: 26px; height: 26px; color: var(--color-primary);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">فرز الورق من المصدر</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">توفير سلال الفرز التعليمية ذات الـ 4 أركان بالمدارس وتدريب الطلاب على الفرز الأول المباشر.</p>
-                    </div>
-
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-secondary);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-secondary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">2</span>
-                            <i data-lucide="sparkles" style="width: 26px; height: 26px; color: var(--color-secondary);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">رفع القيمة (Upcycling)</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">تحويل خامات الكرتون والورق لوسائل تعليمية تفاعلية (مثل ساعة الوقت، بازل الحروف، ومسرح العرائس).</p>
-                    </div>
-
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-accent);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-accent); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">3</span>
-                            <i data-lucide="truck" style="width: 26px; height: 26px; color: var(--color-accent);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">التدوير والبيع المعتمد</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">توجيه الورق المضغوط لشركاء التدوير المعتمدين بأوزان رقمية وإيصالات موثقة بالجمعية.</p>
-                    </div>
-
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-primary);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-primary-dark); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">4</span>
-                            <i data-lucide="pie-chart" style="width: 26px; height: 26px; color: var(--color-primary);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">توزيع العائد (40-25-10-25)</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">40% للسيدات المعيلات، 25% لدعم المدارس، 10% لجمعية الإسراء الميدانية، و25% للتشغيل والتطوير.</p>
-                    </div>
-
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-secondary);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-secondary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">5</span>
-                            <i data-lucide="heart-handshake" style="width: 26px; height: 26px; color: var(--color-secondary);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">رعاية الطلاب وذوي الهمم</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">تزويد المدارس بالأدوات الخضراء ودعم الطلاب غير القادرين ورعاية ذوي الإعاقة بالبحيرة.</p>
-                    </div>
-
-                    <div class="chain-step-card spring-hover" style="position: relative; background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid var(--color-accent);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="width: 38px; height: 38px; background: var(--color-accent); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">6</span>
-                            <i data-lucide="trending-up" style="width: 26px; height: 26px; color: var(--color-accent);"></i>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">التوسع والربط الرقمي</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6;">رصد خفض الانبعاثات الكربونية بآليات EPA WARM والتوسع بآلية المنصة الذكية NISGP 2026.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final Call-to-Action Section -->
-        <section class="section" style="background: linear-gradient(135deg, var(--color-primary-dark), #0B4F3F); color: #ffffff; text-align: center; padding: 4.5rem 0;">
-            <div class="container" style="max-width: 820px;">
-                <span class="badge" style="background: rgba(234,88,12,0.25); color: #FFEDD5; border: 1px solid rgba(234,88,12,0.4); padding: 0.4rem 1.2rem; margin-bottom: 1.25rem; display: inline-block;">
-                    انضم للمبادرة الخضراء الذكية 2026
-                </span>
-                <h2 style="color: #ffffff; font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-family: 'Noto Naskh Arabic', serif; margin-bottom: 1.25rem; font-weight: 700;">
-                    شاركونا التغيير البيئي والمجتمعي بالبحيرة
-                </h2>
-                <p style="color: #D1E8E2; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.25rem;">
-                    نرحب بك معنا سواء كنت مدرسة ترغب بالانضمام، جمعية أهلية تريد الشراكة الميدانية، متطوعاً بيئياً، أو سيدة تبحث عن تمكين وتدريب إنتاجي.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#forms" class="btn btn-accent spring-hover" style="padding: 0.95rem 2.25rem; font-size: 1.1rem; text-decoration: none;">
-                        <i data-lucide="user-plus"></i>
-                        <span>سجّل جمعيتك / انضم الآن</span>
+                <!-- Link to Full Detailed Impact Page -->
+                <div style="text-align: center;">
+                    <a href="#impact" class="btn btn-primary spring-hover" style="padding: 0.75rem 2rem; font-size: 0.98rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span>استعرض لوحة الأثر والشفافية ودليل المدارس الـ 26 كاملاً</span>
+                        <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
                     </a>
-                    <a href="#about" class="btn btn-outline spring-hover" style="padding: 0.95rem 2.25rem; font-size: 1.1rem; border-color: #ffffff; color: #ffffff; text-decoration: none; backdrop-filter: blur(8px); background: rgba(255,255,255,0.1);">
-                        <i data-lucide="info"></i>
-                        <span>تعرف على الهيكل والملكية الفكرية</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4-Stage Value Chain Summary -->
+        <section class="section" style="background: var(--color-surface); padding: 3.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 2.25rem;">
+                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
+                        <i data-lucide="workflow"></i> دورة عمل المنظومة
+                    </div>
+                    <h2 class="section-title" style="font-size: 1.9rem; color: var(--color-primary-dark); margin-top: 0.3rem;">كيف نحول الهدر إلى قيمة مستدامة؟</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 1.3rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.4rem;">01. الفرز المدرسي</div>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6;">حاويات مخصصة ونقاط جمع آمنة داخل المدارس بمشاركة الطلاب وفريق GCT.</p>
+                    </div>
+                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 1.3rem; font-weight: 800; color: var(--color-secondary); margin-bottom: 0.4rem;">02. الجمع واللوجستيات</div>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6;">نقل وتجميع موثق عبر الجمعيات الأهلية الشريكة بنظام التتبع الرقمي.</p>
+                    </div>
+                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 1.3rem; font-weight: 800; color: #EC4899; margin-bottom: 0.4rem;">03. التدريب والتحويل</div>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6;">إنتاج مجسمات وألعاب تفاعلية ووسائل تعلم وورق يدوي بأيدي السيدات.</p>
+                    </div>
+                    <div class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 1.3rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.4rem;">04. التوزيع العادل</div>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6;">عائد مالي عادل: 40% للسيدات، 25% للمدرسة، 10% للجمعية، 25% فائض وتطوير.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="#how-it-works" style="color: var(--color-primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <span>اطلع على تفاصيل المراحل التشغيلية الـ 8 الكاملة</span>
+                        <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concise Core Partners Highlight (3 Main Anchors Only) -->
+        <section class="section" style="background: var(--color-bg); padding: 3.5rem 0;">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
+                        <i data-lucide="shield-check"></i> الشركاء والجهات الداعمة
+                    </div>
+                    <h2 class="section-title" style="font-size: 1.9rem; color: var(--color-primary-dark); margin-top: 0.3rem;">شركاء الاستدامة والأثر</h2>
+                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 600px; margin: 0.3rem auto 0;">تعاون مؤسسي وثيق يضمن استدامة التنفيذ والامتثال لأعلى معايير الحوكمة.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 950px; margin: 0 auto 2rem;">
+                    <!-- Partner 1 -->
+                    <div class="card spring-hover" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <img src="./assets/images/لوجو جمعية الاسراء.jpg" alt="جمعية الإسراء الخيرية" style="max-height: 60px; max-width: 100%; object-fit: contain; border-radius: 6px;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">جمعية الإسراء الخيرية بدمنهور</h3>
+                        <p style="font-size: 0.84rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">الجهة المنفذة المعتمدة (إشهار #1124 لسنة 2006)</p>
+                        <span class="badge badge-certified" style="font-size: 0.72rem;">الشريك الميداني الرسمي</span>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="card spring-hover" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <img src="./assets/images/logo-edu.png" alt="مديرية التربية والتعليم بالبحيرة" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">مديرية التربية والتعليم بالبحيرة</h3>
+                        <p style="font-size: 0.84rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">موافقة رسمية وتنفيذ بـ 26 مدرسة معتمدة</p>
+                        <span class="badge badge-certified" style="font-size: 0.72rem;">المظلة التعليمية المعتمدة</span>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="card spring-hover" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <img src="./assets/images/logo-nisgp.png" alt="المبادرة الوطنية للمشروعات الخضراء الذكية" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">المبادرة الوطنية للمشروعات الخضراء الذكية</h3>
+                        <p style="font-size: 0.84rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">دورة 2026 – محافظة البحيرة</p>
+                        <span class="badge badge-certified" style="font-size: 0.72rem;">المبادرة الوطنية NISGP</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="#about" class="btn btn-outline spring-hover" style="padding: 0.75rem 2rem; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span>استعرض كامل ملفات الملكية الفكرية وتفاصيل الشركاء والخط الزمني</span>
+                        <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Gateways Section -->
+        <section class="section" style="background: var(--color-surface); padding: 3rem 0 4rem; border-top: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 1.8rem; color: var(--color-primary-dark);">بوابات الوصول والخدمات السريعة</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+                    <a href="#calculators" class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none; color: inherit; display: block;">
+                        <div style="color: var(--color-primary); margin-bottom: 0.5rem;"><i data-lucide="calculator" style="width: 32px; height: 32px;"></i></div>
+                        <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">حاسبة الكربون والمالية</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5;">احسب الوفر الكربوني EPA WARM v16 وتوزيع العوائد بالأرقام.</p>
+                    </a>
+
+                    <a href="#forms" class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none; color: inherit; display: block;">
+                        <div style="color: #25D366; margin-bottom: 0.5rem;"><i data-lucide="send" style="width: 32px; height: 32px;"></i></div>
+                        <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">نماذج التسجيل وواتساب</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5;">سجّل جمعيتك أو مدرستك أو انضم كمتطوع مباشرة عبر WhatsApp.</p>
+                    </a>
+
+                    <a href="#knowledge" class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none; color: inherit; display: block;">
+                        <div style="color: var(--color-secondary); margin-bottom: 0.5rem;"><i data-lucide="book-open" style="width: 32px; height: 32px;"></i></div>
+                        <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">مكتبة الأنشطة المدرسية</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5;">دليل الأنشطة التفاعلية، تصنيع الورق، وتدوير الكرتون.</p>
+                    </a>
+
+                    <a href="#policy" class="card spring-hover" style="background: var(--color-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none; color: inherit; display: block;">
+                        <div style="color: #EC4899; margin-bottom: 0.5rem;"><i data-lucide="shield-check" style="width: 32px; height: 32px;"></i></div>
+                        <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.3rem;">سياسة الحماية والأمان</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5;">ميثاق عدم التمييز الـ 15 مادة، الشكاوى السرية، وتحميل PDF.</p>
                     </a>
                 </div>
             </div>
@@ -518,56 +251,16 @@ function renderHomePage() {
     `;
 }
 
-/* Metric Observer Counter Animation Hook */
-function initHomeCounters() {
-    const counterElements = document.querySelectorAll('.counter-value');
-    if (!counterElements.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-        counterElements.forEach(el => {
-            const target = el.getAttribute('data-target') || '0';
-            const suffix = el.getAttribute('data-suffix') || '';
-            el.textContent = target + suffix;
-        });
-        return;
-    }
-
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-                const suffix = el.getAttribute('data-suffix') || '';
-                animateSingleCounter(el, target, suffix);
-                obs.unobserve(el);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    counterElements.forEach(el => observer.observe(el));
+function initHomeLogic() {
+    // Animate Counters if in viewport
+    const counters = document.querySelectorAll('#homeMetricsGrid .counter-value');
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target')) || 0;
+        const suffix = counter.getAttribute('data-suffix') || '';
+        counter.textContent = target.toLocaleString('ar-EG') + suffix;
+    });
 }
 
-function animateSingleCounter(el, target, suffix) {
-    const duration = 1800;
-    const startTime = performance.now();
-
-    function step(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 3);
-        const currentVal = Math.floor(easeProgress * target);
-
-        el.textContent = currentVal + suffix;
-
-        if (progress < 1) {
-            requestAnimationFrame(step);
-        } else {
-            el.textContent = target + suffix;
-        }
-    }
-
-    requestAnimationFrame(step);
-}
 
 /* ===== PAGE: about ===== */
 /* ==========================================================================
@@ -936,6 +629,7 @@ function renderAboutPage() {
     `;
 }
 
+
 /* ===== PAGE: how-it-works ===== */
 /* ==========================================================================
    Page Component: How It Works Page View (pages/how-it-works.js)
@@ -1196,6 +890,7 @@ function renderHowItWorksPage() {
         </section>
     `;
 }
+
 
 /* ===== PAGE: impact ===== */
 /* ==========================================================================
@@ -1505,6 +1200,7 @@ window.filterImpactCards = function(category, btnElement) {
         }
     });
 };
+
 
 /* ===== PAGE: smart-platform ===== */
 /* ==========================================================================
@@ -1876,6 +1572,7 @@ function initSmartPlatformLogic() {
     });
 }
 
+
 /* ===== PAGE: calculators ===== */
 /* ==========================================================================
    Page Component: Interactive Calculators (pages/calculators.js)
@@ -2166,6 +1863,7 @@ function initCalculatorsLogic() {
     if (logisticsInput) logisticsInput.addEventListener('input', updateRevenue);
     updateRevenue();
 }
+
 
 /* ===== PAGE: knowledge ===== */
 /* ==========================================================================
@@ -2530,7 +2228,100 @@ window.filterKnowledgeCards = function(category, btnElement) {
     });
 };
 
+
 /* ===== PAGE: forms ===== */
+
+// WhatsApp Direct Dispatcher Helper
+window.sendFormToWhatsApp = function(formType) {
+    var phone = '201064376377';
+    var text = '';
+    
+    if (formType === 'assoc') {
+        var name = (document.getElementById('assocName') || {}).value || '';
+        var reg = (document.getElementById('assocRegNum') || {}).value || '';
+        var gov = (document.getElementById('assocGov') || {}).value || '';
+        var city = (document.getElementById('assocCity') || {}).value || '';
+        var contact = (document.getElementById('assocContact') || {}).value || '';
+        var userPhone = (document.getElementById('assocPhone') || {}).value || '';
+        var scope = (document.getElementById('assocScope') || {}).value || '';
+        
+        if (!name || !contact || !userPhone) {
+            alert('يرجى ملء الحقول الإلزامية (اسم الجمعية، المسؤول، ورقم الهاتف)');
+            return;
+        }
+        text = '🌿 *طلب تسجيل جمعية شريكة - برة الصندوق* 🌿\n\n' +
+               '🏢 *اسم الجمعية:* ' + name + '\n' +
+               '📜 *رقم الإشهار:* ' + reg + '\n' +
+               '📍 *المحافظة والمركز:* ' + gov + ' - ' + city + '\n' +
+               '👤 *مسؤول التواصل:* ' + contact + '\n' +
+               '📱 *رقم الهاتف:* ' + userPhone + '\n' +
+               '📝 *نطاق العمل:* ' + (scope || 'غير محدد');
+    } else if (formType === 'school') {
+        var name = (document.getElementById('schoolName') || {}).value || '';
+        var stage = (document.getElementById('schoolStage') || {}).value || '';
+        var gov = (document.getElementById('schoolGov') || {}).value || '';
+        var est = (document.getElementById('schoolStudentsEst') || {}).value || '';
+        var contact = (document.getElementById('schoolContact') || {}).value || '';
+        var userPhone = (document.getElementById('schoolPhone') || {}).value || '';
+        
+        if (!name || !contact || !userPhone) {
+            alert('يرجى ملء الحقول الإلزامية (اسم المدرسة، مسؤول التواصل، ورقم الهاتف)');
+            return;
+        }
+        text = '🏫 *ترشيح مدرسة خضراء ذكية - برة الصندوق* 🏫\n\n' +
+               '🏫 *اسم المدرسة:* ' + name + '\n' +
+               '🎓 *المرحلة التعليمية:* ' + stage + '\n' +
+               '📍 *المحافظة والإدارة:* ' + gov + '\n' +
+               '👥 *الطلاب التقديري:* ' + est + '\n' +
+               '👤 *اسم المرشح ووظيفته:* ' + contact + '\n' +
+               '📱 *رقم التواصل:* ' + userPhone;
+    } else if (formType === 'volunteer') {
+        var name = (document.getElementById('volName') || {}).value || '';
+        var userPhone = (document.getElementById('volPhone') || {}).value || '';
+        var domain = (document.getElementById('volDomain') || {}).value || '';
+        var gov = (document.getElementById('volGov') || {}).value || '';
+        
+        if (!name || !userPhone) {
+            alert('يرجى ملء الاسم ورقم الهاتف');
+            return;
+        }
+        text = '💚 *طلب تطوع بفريق GCT - برة الصندوق* 💚\n\n' +
+               '👤 *الاسم:* ' + name + '\n' +
+               '📱 *الهاتف:* ' + userPhone + '\n' +
+               '🎯 *مجال التطوع:* ' + domain + '\n' +
+               '📍 *المحافظة والمدينة:* ' + gov;
+    } else if (formType === 'women') {
+        var name = (document.getElementById('womanName') || {}).value || '';
+        var userPhone = (document.getElementById('womanPhone') || {}).value || '';
+        var interest = (document.getElementById('womanInterest') || {}).value || '';
+        var gov = (document.getElementById('womanGov') || {}).value || '';
+        
+        if (!name || !userPhone) {
+            alert('يرجى ملء الاسم ورقم الهاتف');
+            return;
+        }
+        text = '✨ *تسجيل اهتمام بتمكين وتدريب السيدات - برة الصندوق* ✨\n\n' +
+               '👤 *اسم المشاركة:* ' + name + '\n' +
+               '📱 *الهاتف:* ' + userPhone + '\n' +
+               '🧶 *المجال المفضل:* ' + interest + '\n' +
+               '📍 *المحافظة والمركز:* ' + gov;
+    } else if (formType === 'partner') {
+        var name = (document.getElementById('partnerName') || {}).value || '';
+        var userPhone = (document.getElementById('partnerPhone') || {}).value || '';
+        
+        if (!name || !userPhone) {
+            alert('يرجى ملء اسم الجهة ورقم التواصل');
+            return;
+        }
+        text = '🚛 *طلب شراكة جمع / نقل / تدوير - برة الصندوق* 🚛\n\n' +
+               '🏢 *اسم الجهة:* ' + name + '\n' +
+               '📱 *رقم التواصل:* ' + userPhone;
+    }
+    
+    var waUrl = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+    window.open(waUrl, '_blank');
+};
+
 /* ==========================================================================
    Page Component: Smart Registration Forms (pages/forms.js)
    Bara El-Sandouq – Smart Green School Project
@@ -2617,9 +2408,14 @@ function renderFormsPage() {
                             <textarea class="form-textarea" id="assocScope" rows="3" placeholder="توضيح مختصر لأهم أنشطة الجمعية والمجتمع المحلي التابع لها..." style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-family: inherit; resize: vertical;"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: var(--color-primary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="send"></i> إرسال طلب تسجيل الجمعية
-                        </button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" onclick="window.sendFormToWhatsApp && window.sendFormToWhatsApp('assoc')" class="btn spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #25D366; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="send"></i> إرسال عبر واتساب 💬
+                            </button>
+                            <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: var(--color-primary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="save"></i> حفظ وإرسال سحابي 💾
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -2663,9 +2459,14 @@ function renderFormsPage() {
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: var(--color-primary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="send"></i> إرسال ترشيح المدرسة
-                        </button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" onclick="window.sendFormToWhatsApp && window.sendFormToWhatsApp('school')" class="btn spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #25D366; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="send"></i> إرسال عبر واتساب 💬
+                            </button>
+                            <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: var(--color-primary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="save"></i> حفظ وإرسال سحابي 💾
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -2701,9 +2502,14 @@ function renderFormsPage() {
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-accent spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: var(--color-accent); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="send"></i> انضم كمتطوع الآن
-                        </button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" onclick="window.sendFormToWhatsApp && window.sendFormToWhatsApp('volunteer')" class="btn spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #25D366; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="send"></i> إرسال عبر واتساب 💬
+                            </button>
+                            <button type="submit" class="btn btn-accent spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: var(--color-accent); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="save"></i> حفظ وإرسال سحابي 💾
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -2752,9 +2558,14 @@ function renderFormsPage() {
                             <a href="#policy" style="font-size: 0.85rem; color: #BE185D; font-weight: 600;">اقرأ ميثاق الحماية والتمكين ←</a>
                         </div>
 
-                        <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: #EC4899; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="send"></i> تسجيل اهتمام التمكين والتدريب
-                        </button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" onclick="window.sendFormToWhatsApp && window.sendFormToWhatsApp('women')" class="btn spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #25D366; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="send"></i> إرسال عبر واتساب 💬
+                            </button>
+                            <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #EC4899; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="save"></i> حفظ وإرسال سحابي 💾
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -2777,9 +2588,14 @@ function renderFormsPage() {
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 2.5rem; font-size: 1.05rem; background: var(--color-secondary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="send"></i> تسجيل طلب الشراكة
-                        </button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" onclick="window.sendFormToWhatsApp && window.sendFormToWhatsApp('partner')" class="btn spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: #25D366; color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="send"></i> إرسال عبر واتساب 💬
+                            </button>
+                            <button type="submit" class="btn btn-primary spring-hover" style="padding: 0.85rem 1.6rem; font-size: 1rem; background: var(--color-secondary); color: #FFFFFF; border: none; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="save"></i> حفظ وإرسال سحابي 💾
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -2969,6 +2785,202 @@ function initFormsLogic() {
     setupFormHandler('womenSubmitForm', 'women', 'اهتمام التمكين والتدريب');
     setupFormHandler('partnerSubmitForm', 'partner', 'طلب الشراكة');
 }
+
+
+/* ===== PAGE: simulator ===== */
+/* ==========================================================================
+   Page Component: Interactive Mobile App Simulator View (pages/simulator.js)
+   Bara El-Sandouq – Smart Green School Project
+   ========================================================================== */
+
+function renderSimulatorPage() {
+    return `
+        <section class="section" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header text-center" style="max-width: 820px; margin: 0 auto 2.5rem auto;">
+                    <div class="section-subtitle">
+                        <i data-lucide="smartphone"></i> بيئة التجربة التفاعلية المباشرة
+                    </div>
+                    <h1 class="section-title">محاكي تطبيق برة الصندوق الذكي 📱</h1>
+                    <p class="section-desc">
+                        جرّب تطبيق الهواتف الذكية الميداني مباشرة داخل المتصفح. يمكنك تصفح الحاسبة السريعة، إرسال طلبات الجمع، وتتبع مخرجات المدارس الخضراء أو تحميل ملف الـ APK وتثبيته على هاتفك فوراً.
+                    </p>
+                </div>
+
+                <!-- Simulator Layout Grid: Interactive Device Mockup + Download Hub -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 3rem; align-items: start; max-width: 1100px; margin: 0 auto;">
+                    
+                    <!-- Left: Interactive Smartphone 3D Frame -->
+                    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                        
+                        <!-- Toolbar Controls -->
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; width: 100%;">
+                            <button class="btn btn-outline" id="rotateSimBtn" onclick="window.toggleSimulatorOrientation()" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; border-radius: var(--radius-md);">
+                                <i data-lucide="rotate-cw"></i> <span>تدوير الشاشة</span>
+                            </button>
+                            <button class="btn btn-outline" id="reloadSimBtn" onclick="window.reloadSimulatorIframe()" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; border-radius: var(--radius-md);">
+                                <i data-lucide="refresh-cw"></i> <span>إعادة تشغيل</span>
+                            </button>
+                            <a href="./simulator.html" target="_blank" class="btn btn-outline" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; border-radius: var(--radius-md); text-decoration: none;">
+                                <i data-lucide="external-link"></i> <span>شاشة كاملة ↗</span>
+                            </a>
+                        </div>
+
+                        <!-- Phone Bezel Container -->
+                        <div class="simulator-phone-wrapper" id="simPhoneWrapper" style="position: relative; width: 100%; max-width: 390px; height: 780px; transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1); filter: drop-shadow(0 20px 40px rgba(11, 79, 63, 0.25));">
+                            
+                            <!-- Outer Frame with Hardware Finish -->
+                            <div style="width: 100%; height: 100%; background: #18181B; border-radius: 48px; padding: 11px; box-shadow: inset 0 0 4px 2px rgba(255, 255, 255, 0.2), inset 0 0 0 3px #27272A, 0 0 0 2px #09090B, 0 20px 40px rgba(0, 0, 0, 0.4); position: relative; display: flex; flex-direction: column; overflow: hidden;">
+                                
+                                <!-- Inner Screen Area -->
+                                <div style="flex: 1; width: 100%; height: 100%; background: #F8FAF9; border-radius: 38px; overflow: hidden; position: relative; display: flex; flex-direction: column;">
+                                    
+                                    <!-- Dynamic Island Notch -->
+                                    <div style="position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 110px; height: 26px; background: #000000; border-radius: 16px; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none;">
+                                        <div style="width: 7px; height: 7px; background: #0F172A; border-radius: 50%;"></div>
+                                        <div style="width: 10px; height: 10px; background: #111827; border-radius: 50%; border: 1.5px solid #1F2937;"></div>
+                                    </div>
+
+                                    <!-- Status Bar -->
+                                    <div style="height: 34px; padding: 6px 16px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; font-weight: 700; color: #064E3B; background: #FFFFFF; border-bottom: 1px solid #F1F5F9; z-index: 40; pointer-events: none; font-family: monospace;">
+                                        <span id="simClock">12:00</span>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <i data-lucide="wifi" style="width: 12px; height: 12px;"></i>
+                                            <span style="font-size: 0.68rem;">5G</span>
+                                            <i data-lucide="battery-charging" style="width: 14px; height: 14px;"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Live Embedded WebApp Iframe -->
+                                    <iframe src="./تطبيق_الهاتف/www/index.html" id="simAppIframe" style="width: 100%; height: calc(100% - 34px); border: none; background: #F8FAF9;" title="تطبيق برة الصندوق الميداني"></iframe>
+
+                                    <!-- Bottom Home Bar -->
+                                    <div style="position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); width: 120px; height: 4px; background: rgba(0,0,0,0.35); border-radius: 10px; z-index: 50; pointer-events: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Download Hub, QR Code & Technical Specs -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        
+                        <!-- Primary Download Card -->
+                        <div class="card glass-card" style="padding: 2rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-default);">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+                                <div style="width: 52px; height: 52px; background: linear-gradient(135deg, #10B981, #047857); color: #FFFFFF; border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);">
+                                    <i data-lucide="download" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem; color: var(--color-primary-dark);">تحميل تطبيق برة الصندوق (APK)</h3>
+                                    <span style="font-size: 0.82rem; color: var(--color-primary-light); font-weight: 700;">الإصدار الميداني الرسمي v2.1 • أندرويد</span>
+                                </div>
+                            </div>
+
+                            <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                                ثبّت التطبيق الميداني مباشرة على هاتفك الذكي للوصول الفوري للحاسبات البيئية دون الحاجة لاتصال بالإنترنت مع إرسال الطلبات المباشرة عبر واتساب.
+                            </p>
+
+                            <!-- Download Action Buttons -->
+                            <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+                                <a href="./BaraElSandouq.apk" download="BaraElSandouq.apk" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem 1.5rem; font-size: 1.05rem; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(31, 122, 90, 0.35);">
+                                    <i data-lucide="download"></i> <span>تحميل ملف APK المباشر (BaraElSandouq.apk)</span>
+                                </a>
+
+                                <a href="./تطبيق_الهاتف/www/index.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center; padding: 0.8rem 1.25rem; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
+                                    <i data-lucide="smartphone"></i> <span>فتح الـ Web App والتثبيت كـ PWA 🚀</span>
+                                </a>
+                            </div>
+
+                            <!-- Trust Badges -->
+                            <div style="display: flex; align-items: center; justify-content: space-around; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.78rem; color: var(--color-text-secondary);">
+                                <span style="display: flex; align-items: center; gap: 4px;"><i data-lucide="shield-check" style="color: #10B981; width: 15px; height: 15px;"></i> آمن 100% وخالٍ من الإعلانات</span>
+                                <span style="display: flex; align-items: center; gap: 4px;"><i data-lucide="wifi-off" style="color: #3B82F6; width: 15px; height: 15px;"></i> يعمل بالكامل بدون إنترنت</span>
+                            </div>
+                        </div>
+
+                        <!-- Instant QR Code Installation Card -->
+                        <div class="card glass-card" style="padding: 1.75rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); text-align: center;">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; color: var(--color-primary-dark); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <i data-lucide="qr-code" style="color: var(--color-primary);"></i> التثبيت الفوري عبر رمز QR
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1rem;">
+                                امسح رمز الاستجابة السريعة بكاميرا هاتفك لفتح وتثبيت التطبيق مباشرة:
+                            </p>
+
+                            <div style="background: #FFFFFF; padding: 12px; border-radius: 16px; display: inline-block; box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://outboxeg.github.io/main/simulator.html" alt="رمز QR لتثبيت تطبيق برة الصندوق" style="width: 150px; height: 150px; display: block;">
+                            </div>
+                            <div style="margin-top: 0.6rem; font-family: monospace; font-size: 0.78rem; color: var(--color-primary); direction: ltr;">
+                                https://outboxeg.github.io/main/
+                            </div>
+                        </div>
+
+                        <!-- App Features & Specifications Matrix -->
+                        <div class="card glass-card" style="padding: 1.75rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);">
+                            <h4 style="margin: 0 0 1rem 0; font-size: 1.05rem; color: var(--color-primary-dark); display: flex; align-items: center; gap: 0.5rem;">
+                                <i data-lucide="cpu" style="color: var(--color-primary);"></i> مواصفات ومزايا التطبيق الميداني:
+                            </h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.88rem; color: var(--color-text-secondary);">
+                                <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <i data-lucide="check-circle-2" style="color: var(--color-primary-light); width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;"></i>
+                                    <span><strong>حاسبة WARM v16 التفاعلية:</strong> حساب فوري لكميات الأشجار والمياه والطاقة المحفوظة في جيبك.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <i data-lucide="check-circle-2" style="color: var(--color-primary-light); width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;"></i>
+                                    <span><strong>استمارة التوريد والجمع السريع:</strong> طلب مندوب وسيارات جمع الكرتون والمخلفات الورقية للمدارس والجمعيات.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <i data-lucide="check-circle-2" style="color: var(--color-primary-light); width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;"></i>
+                                    <span><strong>معرض الوسائل والألعاب الـ 9:</strong> استعراض صور وتفاصيل أدوات التعليم البيئي المصنوعة من الكرتون.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <i data-lucide="check-circle-2" style="color: var(--color-primary-light); width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;"></i>
+                                    <span><strong>تكامل واتساب المباشر:</strong> تجهيز الرسائل والتقارير تلقائياً وإرسالها لإدارة الجمعية.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+function initSimulatorLogic() {
+    // Clock in simulator status bar
+    function updateSimClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const mins = String(now.getMinutes()).padStart(2, '0');
+        const clockEl = document.getElementById('simClock');
+        if (clockEl) clockEl.textContent = `${hours}:${mins}`;
+    }
+    updateSimClock();
+
+    window.toggleSimulatorOrientation = function() {
+        const phone = document.getElementById('simPhoneWrapper');
+        if (phone) {
+            if (phone.style.maxWidth === '700px') {
+                phone.style.maxWidth = '390px';
+                phone.style.height = '780px';
+            } else {
+                phone.style.maxWidth = '700px';
+                phone.style.height = '420px';
+            }
+        }
+    };
+
+    window.reloadSimulatorIframe = function() {
+        const iframe = document.getElementById('simAppIframe');
+        if (iframe) {
+            iframe.src = './تطبيق_الهاتف/www/index.html?t=' + Date.now();
+        }
+    };
+}
+
 
 /* ===== PAGE: admin ===== */
 /* ==========================================================================
@@ -4003,1004 +4015,5 @@ function initAdminLogic() {
                 setTimeout(() => location.reload(), 1000);
             }
         });
-    }
-}
-
-/* ===== PAGE: policy ===== */
-/* ==========================================================================
-   Page Component: Policy & Protection View (pages/policy.js)
-   Bara El-Sandouq – Smart Green School Project
-   Document: سياسة الحماية وعدم التمييز وتلقي الشكاوى (الإصدار 1.0 / 2026)
-   ========================================================================== */
-
-function renderPolicyPage() {
-    return `
-        <!-- Policy Hero Header Section -->
-        <section class="section" style="background: linear-gradient(135deg, rgba(11, 79, 63, 0.95), rgba(19, 78, 74, 0.98)), url('./assets/images/field-women.png') center/cover no-repeat; color: #FFFFFF; padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--color-border); position: relative;">
-            <div class="container" style="position: relative; z-index: 2;">
-                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                    <!-- Accreditation Badges -->
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(220, 252, 231, 0.18); color: #DCFCE7; border: 1px solid rgba(220, 252, 231, 0.35); padding: 0.45rem 1.25rem; font-size: 0.88rem; margin-bottom: 1.25rem; border-radius: var(--radius-full); backdrop-filter: blur(8px); flex-wrap: wrap; justify-content: center;">
-                        <span style="display: flex; align-items: center; gap: 0.35rem; font-weight: 700;">
-                            <i data-lucide="shield-check" style="width: 16px; height: 16px; color: #34D399;"></i>
-                            وثيقة سياسة داخلية معتمدة للعمل بالمشروع
-                        </span>
-                        <span style="opacity: 0.5;">|</span>
-                        <span>الإصدار 1.0 — عام 2026</span>
-                    </div>
-
-                    <h1 class="section-title" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-family: 'Noto Naskh Arabic', serif; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; line-height: 1.35; text-shadow: 0 4px 16px rgba(0,0,0,0.3);">
-                        سياسة الحماية وعدم التمييز وتلقي الشكاوى
-                    </h1>
-
-                    <p class="section-desc" style="color: #E2ECE9; font-size: 1.15rem; line-height: 1.8; max-width: 780px; margin: 0 auto 2rem;">
-                        الميثاق الإداري والمهني الشامل لضمان بيئة عمل وتدريب آمنة، عادلة ومحترمة، وتكافؤ الفرص، وحماية حقوق المشاركات والعاملات والمتدربات في مبادرة «برة الصندوق – المدرسة الخضراء الذكية».
-                    </p>
-
-                    <!-- Official Accreditation Strip -->
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-md); padding: 0.9rem 1.25rem; margin: 0 auto 2rem; max-width: 820px; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: #F4F1E8;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="building-2" style="color: #34D399; width: 18px; height: 18px; flex-shrink: 0;"></i>
-                            <span><strong>الجهة المنفذة والشريك الميداني:</strong> جمعية الإسراء الخيرية بدمنهور (إشهار #1124)</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="award" style="color: #FDBA74; width: 18px; height: 18px; flex-shrink: 0;"></i>
-                            <span><strong>صاحبة المبادرة والملكية الفكرية:</strong> أ. فاطمة عبد المجيد راضي</span>
-                        </div>
-                    </div>
-
-                    <!-- Quick Actions Buttons -->
-                    <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="./docs/guides/outbox-safety-policy.pdf" download="outbox-safety-policy-2026.pdf" target="_blank" class="btn btn-accent spring-hover" style="padding: 0.75rem 1.6rem; font-size: 0.98rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
-                            <span>تحميل وثيقة الـ PDF الرسمية</span>
-                        </a>
-                        <button onclick="switchPolicyTab('grievanceTab')" class="btn btn-outline spring-hover" style="padding: 0.75rem 1.5rem; font-size: 0.98rem; border-color: rgba(255,255,255,0.6); color: #FFFFFF; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="lock" style="width: 18px; height: 18px; color: #FDBA74;"></i>
-                            <span>تقديم شكوى أو بلاغ سري</span>
-                        </button>
-                        <button onclick="switchPolicyTab('ackTab')" class="btn btn-outline spring-hover" style="padding: 0.75rem 1.5rem; font-size: 0.98rem; border-color: rgba(255,255,255,0.6); color: #FFFFFF; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="check-square" style="width: 18px; height: 18px; color: #34D399;"></i>
-                            <span>توقيع إقرار الالتزام الرقمي</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Governance Highlights & Core Commitments (6 Cards) -->
-        <section class="section" style="background: var(--color-surface); padding: 3.5rem 0 3rem; border-bottom: 1px solid var(--color-border);">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;">
-                    <div class="section-subtitle" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 700;">
-                        <i data-lucide="sparkles"></i> ركائز الأمان والحوكمة النسائية
-                    </div>
-                    <h2 class="section-title" style="font-size: 2rem; color: var(--color-primary-dark); margin-top: 0.4rem;">أبرز مؤشرات وضمانات السياسة المعتمدة</h2>
-                    <p class="section-desc" style="color: var(--color-text-secondary); max-width: 650px; margin: 0.4rem auto 0;">التزام تطبيقي صارم بأعلى معايير الشفافية، تكافؤ الفرص والشمول المالي والاجتماعي.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                    <!-- Card 1 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #1F7A5A;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(31, 122, 90, 0.15); color: #1F7A5A; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="users" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem;">100% قيادة نسائية</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">هيكل تنفيذي وإداري نسائي</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            10 فرق عمل ميدانية نسائية بالكامل (10 سيدات لكل فريق)، وإدارة تنفيذية نسائية متكاملة مع قصر دور الرجال على الاستشارات المؤقتة فقط.
-                        </p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #1C9A8B;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(28, 154, 139, 0.15); color: #1C9A8B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="graduation-cap" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem;">217 متدربة</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">6 برامج تدريب وبناء قدرات</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            متوسط 30 ساعة تدريبية لكل برنامج، شملت تدريب المعلمات وخريجات التربية الفنية في التدوير الورقي، التسويق الرقمي، والتصميم بالذكاء الاصطناعي.
-                        </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #D97706;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(217, 119, 6, 0.15); color: #D97706; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="credit-card" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem;">65% محافظ رقمية</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">الشمول المالي والتمكين</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            تشجيع استقلالية المرأة والدفع الإلكتروني، وتوفير أجور عادلة متساوية عن العمل المتساوي القيمة ودعم التحول الرقمي للتحصيل.
-                        </p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #2563EB;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(37, 99, 235, 0.15); color: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem;">5–6 ساعات يومياً</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">بيئة عمل مرنة وآمنة</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            مراعاة تامة للظروف الأسرية والاجتماعية للسيدات، وتوفير بيئة تدريب محترمة وشاملة تدعم التوازن بين العمل والحياة.
-                        </p>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #DC2626;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(220, 38, 38, 0.15); color: #DC2626; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="shield-alert" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem; background: #FEE2E2; color: #991B1B; border-color: #FCA5A5;">صفر تسامح (Zero Tolerance)</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">حظر التحرش والتمييز</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            حظر مطلق لأي سلوك مسيء أو تحرش أو استغلال للسلطة، وحماية كاملة للمبلّغات من أي إجراء انتقامي أو إقصاء.
-                        </p>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="card glass-card spring-hover" style="background: var(--color-bg); padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); border-top: 4px solid #059669;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                            <div style="width: 44px; height: 44px; background: rgba(5, 150, 105, 0.15); color: #059669; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i data-lucide="lock" style="width: 22px; height: 22px;"></i>
-                            </div>
-                            <span class="badge badge-certified" style="font-size: 0.78rem;">سرية وحماية مشددة</span>
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-weight: 700;">مسار شكاوى عادل وسري</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            سجل مؤمّن ومحدود الوصول، استماع محايد بدون افتراض إدانة، واتخاذ إجراءات تصحيحية رادعة مع احترام خصوصية جميع الأطراف.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Interactive Tabs Section -->
-        <section class="section" style="background: var(--color-bg); padding: 3.5rem 0 5rem;">
-            <div class="container">
-                <!-- Navigation Tabs Bar -->
-                <div class="touch-scroll-wrapper">
-                    <div class="policy-tabs-nav" role="tablist">
-                        <button class="policy-tab-btn active" id="btn-articlesTab" onclick="switchPolicyTab('articlesTab')" role="tab" aria-selected="true">
-                            <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
-                            <span>نص السياسة الكامل (15 مادة)</span>
-                        </button>
-                        <button class="policy-tab-btn" id="btn-workflowTab" onclick="switchPolicyTab('workflowTab')" role="tab" aria-selected="false">
-                            <i data-lucide="workflow" style="width: 18px; height: 18px;"></i>
-                            <span>مسار وضمانات الشكاوى</span>
-                        </button>
-                        <button class="policy-tab-btn" id="btn-grievanceTab" onclick="switchPolicyTab('grievanceTab')" role="tab" aria-selected="false">
-                            <i data-lucide="shield-alert" style="width: 18px; height: 18px; color: #DC2626;"></i>
-                            <span>تقديم بلاغ / شكوى سرية</span>
-                        </button>
-                        <button class="policy-tab-btn" id="btn-ackTab" onclick="switchPolicyTab('ackTab')" role="tab" aria-selected="false">
-                            <i data-lucide="file-check" style="width: 18px; height: 18px; color: #059669;"></i>
-                            <span>إقرار الالتزام الرقمي</span>
-                        </button>
-                        <button class="policy-tab-btn" id="btn-pdfTab" onclick="switchPolicyTab('pdfTab')" role="tab" aria-selected="false">
-                            <i data-lucide="file-text" style="width: 18px; height: 18px; color: #2563EB;"></i>
-                            <span>الوثيقة الرسمية (PDF)</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- TAB 1: Complete Articles Accordion & Full Text -->
-                <div class="policy-tab-pane" id="articlesTab" style="display: block;">
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <!-- Search & Quick Filter inside Policy Articles -->
-                        <div style="background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                            <div style="position: relative; flex: 1; min-width: 260px;">
-                                <i data-lucide="search" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--color-text-muted);"></i>
-                                <input type="text" id="policySearchInput" placeholder="ابحث في نصوص ومواد السياسة (مثل: تمكين، تحرش، شكاوى، شمول مالي)..." oninput="filterPolicyArticles()" style="width: 100%; padding: 0.65rem 2.5rem 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-bg); font-family: inherit; font-size: 0.95rem; outline: none;">
-                            </div>
-                            <button onclick="expandAllArticles(true)" class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.85rem;">توسيع الكل</button>
-                            <button onclick="expandAllArticles(false)" class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.85rem;">طي الكل</button>
-                        </div>
-
-                        <!-- Articles List -->
-                        <div class="articles-list" id="articlesList" style="display: flex; flex-direction: column; gap: 1rem;">
-                            
-                            <!-- Article 1 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">1</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">أولاً: الغرض من السياسة</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p>
-                                        تهدف هذه السياسة إلى ضمان بيئة عمل وتدريب آمنة، عادلة، محترمة وشاملة داخل مبادرة «برة الصندوق – المدرسة الخضراء الذكية»، مع ضمان تكافؤ الفرص وعدم التمييز، وحماية جميع المشاركات والعاملات والمتدربات من أي إساءة أو تحرش أو استغلال أو انتقام، ووضع مسار واضح وسري وعادل لتلقي الشكاوى ودراستها واتخاذ الإجراءات المناسبة.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 2 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">2</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">ثانياً: نطاق التطبيق</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">تسري السياسة على الإدارة، وفريق المشروع، وفرق العمل الميدانية، والمدربات، والمتدربات، والمتطوعات، والمتعاونات، وأي شخص يشارك في أنشطة المشروع أو يمثل المشروع أمام الشركاء والمجتمع.</li>
-                                        <li style="margin-bottom: 0.5rem;">تشمل السياسة أنشطة التدريب، والإنتاج، والتسويق، والزيارات الميدانية، والفعاليات، والاجتماعات، والاتصالات الرقمية، وأي نشاط مرتبط بالمشروع.</li>
-                                        <li>تُطبق السياسة داخل مقرات الجمعيات والمدارس وأماكن التدريب والعمل، وكذلك في قنوات التواصل الإلكترونية المستخدمة لأغراض المشروع.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 3 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">3</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">ثالثاً: التزام المشروع بالتمكين وتكافؤ الفرص</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p style="margin-bottom: 0.75rem;">
-                                        يعتمد المشروع على مشاركة نسائية واسعة في الإدارة والتنفيذ، حيث تتولى السيدات كامل الأدوار الإدارية والتشغيلية الأساسية، بينما يقتصر وجود الرجال في نطاق المشروع على أدوار استشارية مؤقتة، بما يدعم قيادة المرأة ومشاركتها الفعلية في صنع القرار.
-                                    </p>
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">لا يجوز التمييز على أساس النوع الاجتماعي أو العمر أو الحالة الاجتماعية أو الخلفية التعليمية أو محل الإقامة أو أي سبب غير مرتبط مباشرة بمتطلبات الدور أو النشاط.</li>
-                                        <li style="margin-bottom: 0.5rem;">تُتاح فرص التدريب والتطوير واكتساب المهارات على أساس الكفاءة والاحتياج الفعلي وطبيعة الدور.</li>
-                                        <li style="margin-bottom: 0.5rem;">يلتزم المشروع بمبدأ الأجر أو المقابل العادل عن العمل المتساوي في القيمة، متى كان هناك مقابل مالي للعمل.</li>
-                                        <li>تُشجع السياسة مشاركة النساء في الأدوار القيادية والفنية والتقنية والتسويقية والإدارية، وليس فقط الأدوار التنفيذية.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 4 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">4</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">رابعاً: بيئة العمل الآمنة والمرنة</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">يعتمد المشروع ساعات عمل مرنة تتناسب مع طبيعة التنفيذ والظروف الأسرية والاجتماعية للمشاركات، ويبلغ متوسط ساعات العمل الفعلية لفريق المشروع نحو <strong>5–6 ساعات يومياً</strong>.</li>
-                                        <li style="margin-bottom: 0.5rem;">يُحظر أي سلوك يتضمن تحرشاً أو تهديداً أو إساءة لفظية أو بدنية أو نفسية أو استغلالاً للسلطة أو الابتزاز أو الإهانة.</li>
-                                        <li style="margin-bottom: 0.5rem;">يلتزم المسؤولون عن الأنشطة باتخاذ إجراءات وقائية مناسبة أثناء التدريب والفعاليات والعمل الميداني، مع احترام الخصوصية والكرامة الشخصية.</li>
-                                        <li>يجوز للمشاركة أو العاملة الإبلاغ عن أي واقعة مقلقة دون الحاجة إلى مواجهة الشخص المشكو في حقه بنفسها.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 5 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(220, 38, 38, 0.12); color: #DC2626; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">5</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">خامساً: الحماية من التحرش والعنف والاستغلال</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">يُعتبر التحرش أو العنف أو التهديد أو الاستغلال أو أي سلوك جنسي غير مرغوب فيه <strong>مخالفة جسيمة</strong> لسياسة المشروع.</li>
-                                        <li style="margin-bottom: 0.5rem;">يُحظر استغلال أي علاقة إدارية أو تدريبية أو إشرافية للحصول على منفعة شخصية أو ممارسة ضغط على أي مشاركة.</li>
-                                        <li>تتعامل إدارة المشروع مع البلاغات المتعلقة بالحماية بجدية وسرية، وتعمل على منع تكرار الضرر وحماية المبلّغة من الانتقام.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 6 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">6</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">سادساً: سياسة عدم الانتقام</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p>
-                                        يُحظر اتخاذ أي إجراء انتقامي ضد أي شخص يقدم شكوى بحسن نية، أو يشارك في فحص شكوى، أو يقدم معلومات أو شهادة مرتبطة بها. ويشمل الانتقام التهديد، أو الإقصاء، أو التضييق، أو حرمان الشخص من فرصة تدريب أو مشاركة دون سبب موضوعي، أو أي معاملة سلبية بسبب الإبلاغ.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 7 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">7</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">سابعاً: آلية تلقي الشكاوى</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">يجوز تقديم الشكوى شفهياً أو كتابياً إلى مسؤولة الإدارة أو الشخص المحدد من إدارة المشروع لاستقبال الشكاوى.</li>
-                                        <li style="margin-bottom: 0.5rem;">تُسجل الشكوى بالقدر اللازم لدراستها، مع احترام سرية بيانات مقدم الشكوى وطبيعة الواقعة.</li>
-                                        <li style="margin-bottom: 0.5rem;">يتم تقييم الشكوى مبدئياً لتحديد درجة الخطورة والحاجة إلى إجراء عاجل لحماية أي شخص معرض للضرر.</li>
-                                        <li style="margin-bottom: 0.5rem;">يتم الاستماع إلى الأطراف ذات الصلة بصورة مهنية ومحايدة، مع عدم افتراض الإدانة قبل استكمال الفحص.</li>
-                                        <li style="margin-bottom: 0.5rem;">عند ثبوت المخالفة، تتخذ الإدارة الإجراء الإداري المناسب وفق طبيعة الواقعة، مع إحالة الوقائع التي تستلزم تدخلاً قانونياً أو رسمياً إلى الجهات المختصة.</li>
-                                        <li>يتم الاحتفاظ بسجل للشكاوى والإجراءات المتخذة بصورة آمنة ومحدودة الوصول.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 8 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">8</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">ثامناً: السرية وحماية البيانات</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">تتعامل إدارة المشروع مع معلومات الشكاوى باعتبارها معلومات حساسة ولا يتم تداولها إلا مع الأشخاص الذين تقتضي مسؤولياتهم ذلك.</li>
-                                        <li style="margin-bottom: 0.5rem;">لا تُستخدم تفاصيل الشكاوى لأغراض إعلامية أو دعائية.</li>
-                                        <li style="margin-bottom: 0.5rem;">تُراعى الموافقات اللازمة عند استخدام الصور أو بيانات المشاركات والمتدربات في التوثيق أو النشر.</li>
-                                        <li>يتم حفظ المستندات والسجلات المتعلقة بالشكاوى في مكان أو نظام وصوله مقيد.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 9 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">9</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">تاسعاً: التدريب وبناء القدرات</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p style="margin-bottom: 0.75rem;">
-                                        يلتزم المشروع بتوفير فرص متخصصة لبناء قدرات النساء والمشاركات، وقد تم تنفيذ برامج تدريبية متنوعة تشمل التدريب الفني على استخدام الورق في تنفيذ الوسائل التعليمية، والتسويق الإلكتروني للمنتجات، والتصميم الفني باستخدام أدوات الذكاء الاصطناعي. بلغ عدد البرامج التدريبية <strong>6 برامج</strong>، بمتوسط <strong>30 ساعة تدريبية</strong> لكل برنامج.
-                                    </p>
-                                    <p style="margin: 0;">
-                                        كما شملت المشاركة التدريبية فريق المشروع، إضافة إلى <strong>217 متدربة</strong> من المدرسات بالمدارس، وفرق التنسيق بالجمعيات الشريكة، وطلاب وخريجات التربية الفنية، بما يعزز نقل المعرفة ورفع قدرة النساء على المشاركة في الاقتصاد الأخضر والاقتصاد الدائري.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 10 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">10</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">عاشراً: الهيكل النسائي للمشروع</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;">يتكون التنفيذ الميداني من <strong>10 فرق عمل إجمالاً</strong>، بواقع فريقين لكل جمعية شريكة.</li>
-                                        <li style="margin-bottom: 0.5rem;">يتكون كل فريق من <strong>10 سيدات وفتيات</strong>، بما يجعل فرق التنفيذ الميداني نسائية بالكامل (100%).</li>
-                                        <li style="margin-bottom: 0.5rem;">الإدارة الأساسية للمشروع من السيدات، بينما يقتصر وجود الرجال على الاستشارة المؤقتة، دون أن يشكل ذلك جزءاً من الإدارة التنفيذية اليومية.</li>
-                                        <li>تُشكل خريجات التربية الفنية والمؤهلات متوسطات التعليم نسبة تقارب <strong>45%</strong> من إجمالي المشاركات، بما يعكس توجيه المشروع إلى فئات قادرة على اكتساب مهارات عملية وتحويلها إلى فرص اقتصادية.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 11 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">11</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">الحادي عشر: الشمول المالي والتمكين الاقتصادي</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p>
-                                        يدعم المشروع استقلالية المرأة وقدرتها على الاستفادة الاقتصادية من المهارات المكتسبة، ويشجع على استخدام أدوات الدفع والتحصيل الرقمي. وتُشير بيانات المشروع إلى امتلاك نحو <strong>65% من إجمالي فريق العمل محافظ إلكترونية</strong>، بما يمثل خطوة عملية نحو تعزيز الشمول المالي.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 12 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">12</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">الثاني عشر: المسؤوليات</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <ul style="padding-right: 1.5rem; margin: 0;">
-                                        <li style="margin-bottom: 0.5rem;"><strong>الإدارة:</strong> اعتماد السياسة، ضمان تطبيقها، وتوفير الموارد والإجراءات اللازمة.</li>
-                                        <li style="margin-bottom: 0.5rem;"><strong>مسؤولة / مسؤول الشكاوى:</strong> استقبال البلاغات، توثيقها، حماية السرية، ورفع التوصيات للإدارة.</li>
-                                        <li style="margin-bottom: 0.5rem;"><strong>قائدات فرق العمل:</strong> نشر السياسة، منع السلوكيات المخالفة، والإبلاغ عن أي واقعة تستدعي التدخل.</li>
-                                        <li><strong>جميع أعضاء المشروع:</strong> الالتزام بالسياسة واحترام حقوق وكرامة الآخرين والإبلاغ عن المخاطر أو المخالفات بحسن نية.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Article 13 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">13</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">الثالث عشر: المخالفات والإجراءات التصحيحية</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p>
-                                        تتعامل إدارة المشروع مع المخالفات وفق مبدأ التناسب والعدالة، وقد تشمل الإجراءات: <strong>التنبيه، أو الإنذار، أو إيقاف المشاركة في النشاط، أو إنهاء التعاون</strong>، أو الإحالة إلى الجهات المختصة عند وجود شبهة مخالفة قانونية، بحسب طبيعة الواقعة ونتائج الفحص.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 14 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">14</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">الرابع عشر: المتابعة والمراجعة</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p>
-                                        تتم مراجعة تطبيق هذه السياسة بصورة دورية، وتُستخدم الملاحظات والشكاوى ونتائج المتابعة لتحسين بيئة العمل والتدريب. ويجوز تحديث السياسة كلما استدعت طبيعة المشروع أو متطلبات الشركاء أو التطور التنظيمي ذلك.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Article 15 -->
-                            <div class="article-card card glass-card" style="background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
-                                <button class="article-toggle-btn" onclick="toggleArticle(this)" style="width: 100%; padding: 1.25rem 1.5rem; text-align: right; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: inherit;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <span class="article-num" style="background: rgba(31, 122, 90, 0.12); color: #1F7A5A; font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">15</span>
-                                        <h3 style="margin: 0; font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 700;">الخامس عشر: إقرار واعتماد السياسة</h3>
-                                    </div>
-                                    <i data-lucide="chevron-down" class="toggle-icon" style="transition: transform 200ms ease; color: var(--color-text-secondary);"></i>
-                                </button>
-                                <div class="article-body" style="padding: 0 1.5rem 1.5rem; color: var(--color-text); font-size: 0.98rem; line-height: 1.8; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <p style="margin-bottom: 1rem;">
-                                        تقر إدارة مبادرة «برة الصندوق – المدرسة الخضراء الذكية» بالتزامها بهذه السياسة، وباتخاذ التدابير اللازمة لنشرها وتعريف العاملات والمتدربات والشركاء بها، وبتوفير قناة واضحة وسرية لتلقي الشكاوى ومعالجة المخالفات.
-                                    </p>
-                                    <div style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                        <div style="font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.4rem;">جمعية الإسراء الخيرية لتنمية المجتمع بدمنهور</div>
-                                        <div style="font-size: 0.9rem; color: var(--color-text-secondary);">الجهة المنفذة / الشريك المجتمعي المضيف للمبادرة (إشهار رقم 1124 لسنة 2006)</div>
-                                        <div style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.25rem;">صاحبة المبادرة والملكية الفكرية: الأستاذة / فاطمة عبد المجيد راضي</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 2: Grievance Workflow & Anti-Retaliation Safeguards -->
-                <div class="policy-tab-pane" id="workflowTab" style="display: none;">
-                    <div style="max-width: 860px; margin: 0 auto;">
-                        <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;">
-                            <h3 style="font-size: 1.8rem; color: var(--color-primary-dark); margin-bottom: 0.5rem; font-family: 'Noto Naskh Arabic', serif;">مسار فحص ومعالجة الشكاوى (5 خطوات مؤمّنة)</h3>
-                            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">آلية احترافية ومحايدة تضمن حماية مقدم البلاغ وسرية البيانات واتخاذ الإجراءات العادلة.</p>
-                        </div>
-
-                        <!-- 5 Steps Flow -->
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem; position: relative;">
-                            <!-- Step 1 -->
-                            <div class="card glass-card" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); display: flex; gap: 1.25rem; align-items: flex-start;">
-                                <div style="width: 48px; height: 48px; background: #1F7A5A; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">1</div>
-                                <div>
-                                    <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.35rem; font-weight: 700;">تقديم البلاغ / الشكوى</h4>
-                                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                                        يتم تقديم الشكوى عبر النموذج الإلكتروني السري، أو شفهياً/كتابياً لمسؤولة الشكاوى دون الحاجة لمواجهة المشكو في حقه، مع إمكانية عدم الإفصاح عن الاسم.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Step 2 -->
-                            <div class="card glass-card" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); display: flex; gap: 1.25rem; align-items: flex-start;">
-                                <div style="width: 48px; height: 48px; background: #1C9A8B; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">2</div>
-                                <div>
-                                    <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.35rem; font-weight: 700;">التوثيق وحفظ السرية</h4>
-                                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                                        توليد كود تتبع مشفر للشكوى وتسجيلها في سجل مؤمّن ومحدود الوصول، مع تشفير بيانات الشاكي ومنع تداولها لأي غرض دعائي أو إعلامي.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="card glass-card" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); display: flex; gap: 1.25rem; align-items: flex-start;">
-                                <div style="width: 48px; height: 48px; background: #D97706; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">3</div>
-                                <div>
-                                    <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.35rem; font-weight: 700;">التقييم المبدئي والتدابير العاجلة</h4>
-                                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                                        تحديد درجة خطورة الواقعة فوراً، واتخاذ إجراءات فورية لحماية أي مشاركة أو متدربة معرضة لأي تهديد أو ضرر محتمل.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Step 4 -->
-                            <div class="card glass-card" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); display: flex; gap: 1.25rem; align-items: flex-start;">
-                                <div style="width: 48px; height: 48px; background: #2563EB; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">4</div>
-                                <div>
-                                    <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.35rem; font-weight: 700;">الاستماع المحايد والفحص المهني</h4>
-                                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                                        الاستماع للأطراف والشهود بحيادية تامة دون افتراض الإدانة، وجمع الأدلة الموضوعية مع الالتزام الكامل بميثاق عدم الانتقام.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Step 5 -->
-                            <div class="card glass-card" style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); display: flex; gap: 1.25rem; align-items: flex-start;">
-                                <div style="width: 48px; height: 48px; background: #059669; color: #FFFFFF; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">5</div>
-                                <div>
-                                    <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.35rem; font-weight: 700;">القرار العادل والإجراء التصحيحي</h4>
-                                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                                        تطبيق الإجراء المناسب (تنبيه، إنذار، استبعاد، إنهاء تعاون، أو إحالة قانونية للجهات المختصة) وإغلاق الشكوى مع توثيق الأثر.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Anti-Retaliation Callout -->
-                        <div class="card" style="margin-top: 2.5rem; background: rgba(220, 252, 231, 0.4); border: 1.5px solid #86EFAC; border-radius: var(--radius-lg); padding: 1.75rem; text-align: center;">
-                            <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: #166534; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.5rem;">
-                                <i data-lucide="shield-check" style="width: 22px; height: 22px;"></i>
-                                ضمانة صارمة بعدم الانتقام (Anti-Retaliation Guarantee)
-                            </div>
-                            <p style="color: #14532D; font-size: 0.95rem; line-height: 1.7; max-width: 680px; margin: 0 auto;">
-                                يحظر المشروع تماماً أي مضايقة أو تضييق أو حرمان من الفرص التدريبية أو الاجتماعية لأي شخص يتقدم بشكوى أو يشهد بحسن نية. حمايتكم مضمونة وموثقة قانونياً.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 3: Confidential Grievance Submission Form -->
-                <div class="policy-tab-pane" id="grievanceTab" style="display: none;">
-                    <div style="max-width: 760px; margin: 0 auto;">
-                        <div class="card glass-card" style="background: var(--color-surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-default);">
-                            <div style="text-align: center; margin-bottom: 2rem;">
-                                <div style="width: 56px; height: 56px; background: rgba(220, 38, 38, 0.12); color: #DC2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i data-lucide="lock" style="width: 28px; height: 28px;"></i>
-                                </div>
-                                <h3 style="font-size: 1.6rem; color: var(--color-primary-dark); font-weight: 700; font-family: 'Noto Naskh Arabic', serif;">تقديم بلاغ أو شكوى سرية ومحمية</h3>
-                                <p style="color: var(--color-text-secondary); font-size: 0.95rem; max-width: 550px; margin: 0.4rem auto 0;">
-                                    هذه القناة مؤمّنة ومشفرة بالكامل. يمكنك تقديم البلاغ دون ذكر اسمك إن رغبت في ذلك، مع ضمان السرية وعدم الانتقام.
-                                </p>
-                            </div>
-
-                            <form id="grievanceForm" onsubmit="handleGrievanceSubmit(event)">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;" class="form-responsive-grid">
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">الاسم (اختياري - يمكنك تركه فارغاً):</label>
-                                        <input type="text" id="grvName" placeholder="فاعل/ة خير أو الاسم الكامل" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">رقم الهاتف أو وسيلة للتواصل السري:</label>
-                                        <input type="text" id="grvPhone" placeholder="01xxxxxxxxx (اختياري للمتابعة)" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                </div>
-
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;" class="form-responsive-grid">
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">نوع الواقعة أو المخالفة: <span style="color: #DC2626;">*</span></label>
-                                        <select id="grvType" required class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                            <option value="">اختر نوع البلاغ...</option>
-                                            <option value="تمييز أو استبعاد غير عادل">تمييز أو استبعاد غير عادل</option>
-                                            <option value="مضايقة أو إساءة لفظية أو سلوكية">مضايقة أو إساءة لفظية أو سلوكية</option>
-                                            <option value="ساعات العمل أو ظروف بيئة التدريب">ساعات العمل أو ظروف بيئة التدريب</option>
-                                            <option value="استغلال للسلطة أو إخلال بالمقابل">استغلال للسلطة أو إخلال بالمقابل المالي</option>
-                                            <option value="انتهاك الخصوصية أو سرية البيانات">انتهاك الخصوصية أو سرية البيانات</option>
-                                            <option value="أخرى">ملاحظة أو شكوى أخرى</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">مكان / نطاق حدوث الواقعة:</label>
-                                        <input type="text" id="grvLocation" placeholder="مثال: مدرسة، مقر جمعية، ورشة تدريبية..." class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                </div>
-
-                                <div class="form-group" style="margin-bottom: 1.5rem;">
-                                    <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">تفاصيل الواقعة أو البلاغ: <span style="color: #DC2626;">*</span></label>
-                                    <textarea id="grvDetails" required rows="5" placeholder="يرجى كتابة التفاصيل بوضوح (ماذا حدث، التوقيت إن أمكن، وأي أطراف ذات صلة)..." class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit; resize: vertical;"></textarea>
-                                </div>
-
-                                <div class="form-group" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                    <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-size: 0.92rem; color: var(--color-text);">
-                                        <input type="checkbox" id="grvConsent" required style="width: 18px; height: 18px; accent-color: var(--color-primary);">
-                                        <span>أقر بأن هذه الشكوى مقدمة بحسن نية ولأغراض حماية بيئة العمل والتدريب، وأطلب معالجتها بالسرية التامة وفق السياسة المعتمدة.</span>
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="btn btn-accent spring-hover" style="width: 100%; padding: 0.9rem; font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                                    <i data-lucide="send"></i>
-                                    <span>إرسال البلاغ السري وتوليد كود التتبع</span>
-                                </button>
-                            </form>
-
-                            <!-- Success Tracking Code Box -->
-                            <div id="grvSuccessBox" style="display: none; margin-top: 1.5rem; background: #ECFDF5; border: 1.5px solid #6EE7B7; border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
-                                <div style="color: #065F46; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">
-                                    <i data-lucide="check-circle-2" style="display: inline-block; vertical-align: middle; width: 22px; height: 22px;"></i>
-                                    تم استلام الشكوى بنجاح وتوثيقها بسرية تامة!
-                                </div>
-                                <p style="color: #047857; font-size: 0.92rem; margin-bottom: 1rem;">
-                                    تم تسجيل البلاغ في السجل المشفر لإدارة المشروع وسوف يتم فحصه من قبل مسؤولة الشكاوى والإدارة فوراً.
-                                </p>
-                                <div style="display: inline-block; background: #FFFFFF; border: 1px dashed #059669; padding: 0.5rem 1.25rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 1.15rem; font-weight: 700; color: #065F46;" id="grvTrackingCodeDisplay">
-                                    GRV-2026-XXXXX
-                                </div>
-                                <div style="font-size: 0.8rem; color: #047857; margin-top: 0.5rem;">احتفظ بهذا الرقم كمرجع سري لمتابعة الشكوى.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 4: Digital Acknowledgment & Compliance Sign-off Form -->
-                <div class="policy-tab-pane" id="ackTab" style="display: none;">
-                    <div style="max-width: 760px; margin: 0 auto;">
-                        <div class="card glass-card" style="background: var(--color-surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-default);">
-                            <div style="text-align: center; margin-bottom: 2rem;">
-                                <div style="width: 56px; height: 56px; background: rgba(5, 150, 105, 0.12); color: #059669; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i data-lucide="file-check-2" style="width: 28px; height: 28px;"></i>
-                                </div>
-                                <h3 style="font-size: 1.6rem; color: var(--color-primary-dark); font-weight: 700; font-family: 'Noto Naskh Arabic', serif;">مرفق إقرار بالاطلاع والالتزام بالسياسة</h3>
-                                <p style="color: var(--color-text-secondary); font-size: 0.95rem; max-width: 550px; margin: 0.4rem auto 0;">
-                                    خاص بفرق العمل الميدانية، المتدربات، المدرسات، ممثلي الجمعيات الشريكة والشركاء المؤسسيين.
-                                </p>
-                            </div>
-
-                            <!-- Policy Oath Block -->
-                            <div style="background: var(--color-bg); border-right: 4px solid var(--color-primary); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.75rem; font-style: italic; color: var(--color-primary-dark); line-height: 1.8; font-size: 0.98rem; border: 1px solid var(--color-border);">
-                                «أقر أنا الموقع/ة أدناه بأنني اطلعت على "سياسة الحماية وعدم التمييز وتلقي الشكاوى" الخاصة بمبادرة "برة الصندوق – المدرسة الخضراء الذكية"، وفهمت ما ورد بها، وألتزم باحترامها والإبلاغ عن أي مخالفة أو خطر وفق القنوات المعتمدة.»
-                            </div>
-
-                            <form id="ackForm" onsubmit="handleAckSubmit(event)">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;" class="form-responsive-grid">
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">الاسم الرباعي: <span style="color: #DC2626;">*</span></label>
-                                        <input type="text" id="ackFullName" required placeholder="أدخل اسمك الرباعي الكامل" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">الصفة / الدور في المشروع: <span style="color: #DC2626;">*</span></label>
-                                        <select id="ackRole" required class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                            <option value="">اختر صفتك...</option>
-                                            <option value="عضوة فريق عمل ميداني">عضوة فريق عمل ميداني (10 فرق عمل)</option>
-                                            <option value="قائدة فريق عمل">قائدة فريق عمل</option>
-                                            <option value="معلمة / مدرسة مستفيدة">معلمة / مدرسة مستفيدة</option>
-                                            <option value="متدربة بناء قدرات (217 متدربة)">متدربة بناء قدرات (217 متدربة)</option>
-                                            <option value="ممثلة جمعية أهلية شريكة">ممثلة جمعية أهلية شريكة</option>
-                                            <option value="طالبة / خريجة تربية فنية">طالبة / خريجة تربية فنية</option>
-                                            <option value="متطوعة أو شريك مجتمعي">متطوعة أو شريك مجتمعي</option>
-                                            <option value="عضو إدارة المشروع">عضو إدارة المشروع</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;" class="form-responsive-grid">
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">الجهة / الجمعية / المدرسة:</label>
-                                        <input type="text" id="ackEntity" placeholder="مثال: جمعية الإسراء / مدرسة..." class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--color-text);">رقم الهاتف / واتساب للتأكيد:</label>
-                                        <input type="tel" id="ackPhone" required placeholder="01xxxxxxxxx" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-bg); font-family: inherit;">
-                                    </div>
-                                </div>
-
-                                <div class="form-group" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                    <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-size: 0.92rem; color: var(--color-text);">
-                                        <input type="checkbox" id="ackAgreed" required style="width: 18px; height: 18px; accent-color: var(--color-primary);">
-                                        <span>أوافق وألتزم بكافة مواد السياسة الـ 15، وأقر بأن هذا التوقيع الرقمي بمثابة توقيع رسمي معتمد.</span>
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary spring-hover" style="width: 100%; padding: 0.9rem; font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                                    <i data-lucide="check-circle"></i>
-                                    <span>تسجيل وتأكيد إقرار الالتزام الرقمي</span>
-                                </button>
-                            </form>
-
-                            <!-- Certificate / Acknowledgment Receipt Box -->
-                            <div id="ackReceiptBox" style="display: none; margin-top: 1.75rem; background: #F0FDF4; border: 2px solid #34D399; border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
-                                <div style="color: #065F46; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">
-                                    <i data-lucide="award" style="display: inline-block; vertical-align: middle; width: 24px; height: 24px; color: #10B981;"></i>
-                                    تم تسجيل إقرار الالتزام بنجاح!
-                                </div>
-                                <p style="color: #047857; font-size: 0.95rem; margin-bottom: 1rem;">
-                                    شكراً لكِ، تم توثيق إقرارك الرسمي في سجل الالتزام المؤسسي لمشروع برة الصندوق 2026.
-                                </p>
-                                <div style="background: #FFFFFF; border: 1px solid #A7F3D0; border-radius: var(--radius-sm); padding: 1rem; text-align: right; font-size: 0.9rem; color: var(--color-text); margin-bottom: 1rem;" id="ackReceiptDetails">
-                                    <!-- Dynamic details injected here -->
-                                </div>
-                                <button onclick="window.print()" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-                                    <i data-lucide="printer" style="width: 16px; height: 16px;"></i>
-                                    <span>طباعة الإقرار</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 5: PDF Document Showcase & Download -->
-                <div class="policy-tab-pane" id="pdfTab" style="display: none;">
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <div class="card glass-card" style="background: var(--color-surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
-                            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                                <img src="./assets/images/logo-israa.jpg" alt="جمعية الإسراء" style="height: 48px; border-radius: 6px; border: 1px solid var(--color-border); padding: 2px; background: #fff;">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary-dark); font-family: 'Noto Naskh Arabic', serif;">وثيقة السياسة الرسمية المعتمدة (نسخة العرض والتوثيق)</div>
-                                <img src="./assets/images/logo-bara.png" alt="برة الصندوق" style="height: 44px;">
-                            </div>
-
-                            <p style="color: var(--color-text-secondary); max-width: 700px; margin: 0 auto 2rem; font-size: 1rem; line-height: 1.7;">
-                                الوثيقة الرسمية الصادرة عن جمعية الإسراء الخيرية بدمنهور (إشهار #1124) للأستاذة / فاطمة عبد المجيد راضي، شاملة المواد الـ 15 كاملة ومرفق الإقرار والتوقيع والاعتماد الرسمي.
-                            </p>
-
-                            <!-- Document Meta Grid -->
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; text-align: right;">
-                                <div style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">رقم الإصدار</div>
-                                    <div style="font-weight: 700; color: var(--color-primary-dark);">الإصدار 1.0 (2026)</div>
-                                </div>
-                                <div style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">حجم الملف</div>
-                                    <div style="font-weight: 700; color: var(--color-primary-dark);">4 صفحات رسمية (A4)</div>
-                                </div>
-                                <div style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">الحالة والاعتماد</div>
-                                    <div style="font-weight: 700; color: #10B981;">معتمدة وموثقة رسمياً ✅</div>
-                                </div>
-                            </div>
-
-                            <!-- PDF Actions & Embed -->
-                            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-                                <a href="./docs/guides/outbox-safety-policy.pdf" download="outbox-safety-policy-2026.pdf" target="_blank" class="btn btn-accent spring-hover" style="padding: 0.85rem 2rem; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                                    <i data-lucide="download" style="width: 20px; height: 20px;"></i>
-                                    <span>تحميل ملف الـ PDF مباشرة</span>
-                                </a>
-                                <a href="./docs/guides/outbox-safety-policy.pdf" target="_blank" class="btn btn-outline spring-hover" style="padding: 0.85rem 1.75rem; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                                    <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>
-                                    <span>فتح في نافذة كاملة</span>
-                                </a>
-                                <button onclick="window.print()" class="btn btn-outline spring-hover" style="padding: 0.85rem 1.75rem; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                    <i data-lucide="printer" style="width: 20px; height: 20px;"></i>
-                                    <span>طباعة الوثيقة</span>
-                                </button>
-                            </div>
-
-                            <!-- Embedded Preview Object / Fallback -->
-                            <div style="border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: #525659; min-height: 500px;">
-                                <iframe src="./docs/guides/outbox-safety-policy.pdf" style="width: 100%; height: 600px; border: none;" title="معاينة وثيقة سياسة الحماية والأمان">
-                                    <p>متصفحك لا يدعم عرض ملف الـ PDF المضمن. يمكنك <a href="./docs/guides/outbox-safety-policy.pdf" target="_blank">النقر هنا لتحميله وقراءته</a>.</p>
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    `;
-}
-
-/* ==========================================================================
-   Interactive Handlers & Helper Functions for Policy Page
-   ========================================================================== */
-
-// 1. Tab Switching Function
-window.switchPolicyTab = function(tabId) {
-    const panes = document.querySelectorAll('.policy-tab-pane');
-    const btns = document.querySelectorAll('.policy-tab-btn, .segmented-control .tab-btn');
-
-    panes.forEach(pane => {
-        if (pane.id === tabId) {
-            pane.style.display = 'block';
-        } else {
-            pane.style.display = 'none';
-        }
-    });
-
-    btns.forEach(btn => {
-        if (btn.id === 'btn-' + tabId) {
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-        } else {
-            btn.classList.remove('active');
-            btn.setAttribute('aria-selected', 'false');
-        }
-    });
-
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
-    }
-};
-
-// 2. Article Accordion Toggle
-window.toggleArticle = function(btn) {
-    const card = btn.closest('.article-card');
-    if (!card) return;
-    const body = card.querySelector('.article-body');
-    const icon = btn.querySelector('.toggle-icon');
-
-    if (body.style.display === 'none') {
-        body.style.display = 'block';
-        if (icon) icon.style.transform = 'rotate(180deg)';
-    } else {
-        body.style.display = 'none';
-        if (icon) icon.style.transform = 'rotate(0deg)';
-    }
-};
-
-// 3. Expand / Collapse All Articles
-window.expandAllArticles = function(expand) {
-    const cards = document.querySelectorAll('.article-card');
-    cards.forEach(card => {
-        const body = card.querySelector('.article-body');
-        const icon = card.querySelector('.toggle-icon');
-        if (body) body.style.display = expand ? 'block' : 'none';
-        if (icon) icon.style.transform = expand ? 'rotate(180deg)' : 'rotate(0deg)';
-    });
-};
-
-// 4. Live Filter / Search across policy articles
-window.filterPolicyArticles = function() {
-    const input = document.getElementById('policySearchInput');
-    if (!input) return;
-    const query = input.value.trim().toLowerCase();
-    const cards = document.querySelectorAll('.article-card');
-
-    cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (!query || text.includes(query)) {
-            card.style.display = 'block';
-            if (query) {
-                const body = card.querySelector('.article-body');
-                if (body) body.style.display = 'block';
-            }
-        } else {
-            card.style.display = 'none';
-        }
-    });
-};
-
-// 5. Handle Confidential Grievance Submission
-window.handleGrievanceSubmit = function(e) {
-    if (e) e.preventDefault();
-
-    const name = document.getElementById('grvName')?.value.trim() || 'بلاغ سري غير مفصح عن الاسم';
-    const phone = document.getElementById('grvPhone')?.value.trim() || 'غير محدد';
-    const type = document.getElementById('grvType')?.value || 'عام';
-    const location = document.getElementById('grvLocation')?.value.trim() || 'المشروع الميداني';
-    const details = document.getElementById('grvDetails')?.value.trim() || '';
-
-    if (!details) {
-        if (typeof showToast === 'function') showToast('يرجى كتابة تفاصيل الشكوى أولاً');
-        return;
-    }
-
-    const randomSuffix = Math.floor(10000 + Math.random() * 90000);
-    const trackingCode = `GRV-2026-${randomSuffix}`;
-
-    const grievanceItem = {
-        code: trackingCode,
-        name,
-        phone,
-        type,
-        location,
-        details,
-        date: new Date().toISOString(),
-        status: 'قيد الفحص السري'
-    };
-
-    // Store in localStorage
-    try {
-        const existing = JSON.parse(localStorage.getItem('outbox_grievances') || '[]');
-        existing.unshift(grievanceItem);
-        localStorage.setItem('outbox_grievances', JSON.stringify(existing));
-    } catch (err) {
-        console.warn('LocalStorage error:', err);
-    }
-
-    // Update UI
-    const form = document.getElementById('grievanceForm');
-    const successBox = document.getElementById('grvSuccessBox');
-    const codeDisplay = document.getElementById('grvTrackingCodeDisplay');
-
-    if (form) form.style.display = 'none';
-    if (successBox) successBox.style.display = 'block';
-    if (codeDisplay) codeDisplay.textContent = trackingCode;
-
-    if (typeof showToast === 'function') {
-        showToast(`تم استلام الشكوى بنجاح برقم تتبع: ${trackingCode}`);
-    }
-
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
-    }
-};
-
-// 6. Handle Digital Policy Acknowledgment
-window.handleAckSubmit = function(e) {
-    if (e) e.preventDefault();
-
-    const fullName = document.getElementById('ackFullName')?.value.trim();
-    const role = document.getElementById('ackRole')?.value;
-    const entity = document.getElementById('ackEntity')?.value.trim() || 'مبادرة برة الصندوق';
-    const phone = document.getElementById('ackPhone')?.value.trim();
-
-    if (!fullName || !role || !phone) {
-        if (typeof showToast === 'function') showToast('يرجى استكمال جميع الحقول المطلوبة');
-        return;
-    }
-
-    const ackItem = {
-        fullName,
-        role,
-        entity,
-        phone,
-        date: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' }),
-        timestamp: new Date().toISOString(),
-        verified: true
-    };
-
-    // Store in localStorage
-    try {
-        const existing = JSON.parse(localStorage.getItem('outbox_policy_acks') || '[]');
-        existing.unshift(ackItem);
-        localStorage.setItem('outbox_policy_acks', JSON.stringify(existing));
-    } catch (err) {
-        console.warn('LocalStorage error:', err);
-    }
-
-    // Update UI
-    const form = document.getElementById('ackForm');
-    const receiptBox = document.getElementById('ackReceiptBox');
-    const receiptDetails = document.getElementById('ackReceiptDetails');
-
-    if (form) form.style.display = 'none';
-    if (receiptBox) receiptBox.style.display = 'block';
-
-    if (receiptDetails) {
-        receiptDetails.innerHTML = `
-            <div style="margin-bottom: 0.4rem;"><strong>الموقع/ة:</strong> ${fullName}</div>
-            <div style="margin-bottom: 0.4rem;"><strong>الصفة / الدور:</strong> ${role} (${entity})</div>
-            <div style="margin-bottom: 0.4rem;"><strong>تاريخ الإقرار:</strong> ${ackItem.date}</div>
-            <div style="color: #059669; font-weight: 700;"><strong>حالة الالتزام:</strong> معتمد ومسجل رسمياً ✅</div>
-        `;
-    }
-
-    if (typeof showToast === 'function') {
-        showToast(`شكراً أ. ${fullName}، تم تسجيل إقرار الالتزام بنجاح`);
-    }
-
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
-    }
-};
-
-// 7. Policy Logic Initializer on Page Load
-function initPolicyLogic() {
-    // Default open first article
-    const firstArticle = document.querySelector('.article-card .article-body');
-    if (firstArticle) {
-        firstArticle.style.display = 'block';
-    }
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
     }
 }

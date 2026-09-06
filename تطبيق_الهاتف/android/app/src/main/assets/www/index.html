@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#1F7A5A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="برة الصندوق">
+    
+    <title>برة الصندوق – المدرسة الخضراء الذكية 📱</title>
+    
+    <!-- Web App Manifest for Mobile PWA / WebAPK -->
+    <link rel="manifest" href="./manifest.json?v=3.1.0">
+    <link rel="icon" type="image/png" href="./icons/icon-96x96.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Master Unified Mobile Stylesheet with Cache Busting -->
+    <link rel="stylesheet" href="./css/mobile.css?v=3.1.0">
+
+    <style>
+        /* Top App Bar */
+        .top-app-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E2ECE9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .top-bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar-logo {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .top-bar-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #064E3B;
+            line-height: 1.1;
+        }
+
+        .top-bar-subtitle {
+            font-size: 0.68rem;
+            color: #1F7A5A;
+            font-weight: 600;
+        }
+
+        .btn-header-icon {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            color: #064E3B;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 120ms ease, background 120ms ease;
+        }
+
+        .btn-header-icon:active {
+            transform: scale(0.92);
+            background: #DCFCE7;
+        }
+
+        /* Full Navigation Sheet / Modal (100% Fail-Proof) */
+        .nav-sheet-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 17, 32, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: none;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 200ms ease;
+        }
+
+        .nav-sheet-backdrop.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .nav-sheet-container {
+            background: #0B251C;
+            color: #FFFFFF;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+            animation: sheetSlideUp 240ms cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        @keyframes sheetSlideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .nav-sheet-header {
+            padding: 1.1rem 1.25rem;
+            background: #061A13;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-sheet-grid {
+            padding: 1rem 1.25rem 2rem;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .nav-sheet-item {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 0.85rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.4rem;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: all 150ms ease;
+        }
+
+        .nav-sheet-item:hover, .nav-sheet-item:active {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: #34D399;
+            transform: translateY(-2px);
+        }
+
+        .nav-sheet-item i {
+            width: 24px;
+            height: 24px;
+            color: #34D399;
+        }
+
+        .nav-sheet-item span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Search Modal */
+        .search-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 17, 32, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 3500;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .search-modal-backdrop.open {
+            display: flex;
+        }
+
+        .search-modal-box {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 540px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh;
+        }
+
+        .search-input-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #E2ECE9;
+            background: #F8FAF9;
+        }
+
+        .search-input-field {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #064E3B;
+            outline: none;
+        }
+
+        .search-results-list {
+            overflow-y: auto;
+            flex: 1;
+            padding: 0.5rem 0;
+        }
+
+        /* Floating Scroll-to-Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 78px;
+            left: 1rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #1F7A5A;
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 4px 14px rgba(31, 122, 90, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 950;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: all 220ms ease;
+        }
+
+        .scroll-top-btn:active {
+            transform: scale(0.92);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Native Top App Header Bar -->
+    <header class="top-app-bar" role="banner">
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <!-- 1. Hamburger Menu Button -->
+            <button type="button" class="btn-header-icon" id="drawerOpenBtn" aria-label="فتح القائمة الكاملة" title="القائمة" onclick="openNavSheet()">
+                <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+            </button>
+            
+            <!-- Brand Link -->
+            <a href="#home" class="top-bar-brand" aria-label="الرئيسية">
+                <img src="./assets/images/logo-bara.png" alt="برة الصندوق" class="top-bar-logo" onerror="this.src='./icons/icon-96x96.png'">
+                <div>
+                    <div class="top-bar-title">برة الصندوق</div>
+                    <div class="top-bar-subtitle">المدرسة الخضراء الذكية</div>
+                </div>
+            </a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <!-- 2. Search Button -->
+            <button type="button" class="btn-header-icon" id="globalSearchBtn" aria-label="بحث فوري في التطبيق" title="بحث فوري" onclick="window.openGlobalSearch && window.openGlobalSearch()">
+                <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- 3. Three Dots Options Menu Button (الثلاث نقاط في الأعلى) -->
+            <button type="button" class="btn-header-icon" id="optionsMenuBtn" aria-label="خيارات إضافية" title="المزيد من الخيارات" onclick="openNavSheet()">
+                <i data-lucide="more-vertical" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <span class="offline-pill" id="networkStatusPill">
+                <i data-lucide="check-circle-2" style="width: 12px; height: 12px;"></i> متصل
+            </span>
+        </div>
+    </header>
+
+    
+    <!-- Off-Canvas Mobile Drawer Structure (Full Directory) -->
+    <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeNavSheet()"></div>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-label="قائمة التصفح الشاملة" style="display:none;">
+        <div class="drawer-header">
+            <span>برة الصندوق</span>
+            <button type="button" id="drawerCloseBtn" onclick="closeNavSheet()">✖</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#home" class="drawer-link active" data-page="home">الرئيسية</a>
+            <a href="#about" class="drawer-link" data-page="about">عن المشروع</a>
+            <a href="#how-it-works" class="drawer-link" data-page="how-it-works">كيف نعمل</a>
+            <a href="#impact" class="drawer-link" data-page="impact">لوحة الأثر</a>
+            <a href="#smart-platform" class="drawer-link" data-page="smart-platform">المنصة الذكية</a>
+            <a href="#calculators" class="drawer-link" data-page="calculators">الحاسبات</a>
+            <a href="#knowledge" class="drawer-link" data-page="knowledge">مكتبة الأنشطة</a>
+            <a href="#forms" class="drawer-link" data-page="forms">النماذج</a>
+            <a href="#policy" class="drawer-link" data-page="policy">السياسة</a>
+            <a href="#admin" class="drawer-link" data-page="admin">لوحة المشرف</a>
+        </nav>
+    </div>
+
+    <!-- Fail-Proof Navigation Action Sheet Modal (All 10 Pages) -->
+    <div class="nav-sheet-backdrop" id="navSheetBackdrop" onclick="closeNavSheet()">
+        <div class="nav-sheet-container" onclick="event.stopPropagation()">
+            <div class="nav-sheet-header">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <img src="./assets/images/logo-bara.png" alt="برة الصندوق" style="max-height: 30px; max-width: 100px; object-fit: contain; background: #FFF; padding: 2px 6px; border-radius: 6px;" onerror="this.src='./icons/icon-96x96.png'">
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: #FFFFFF;">قائمة أقسام المنظومة</div>
+                        <div style="font-size: 0.72rem; color: #34D399;">المدرسة الخضراء الذكية</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-header-icon" onclick="closeNavSheet()" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #FFF;">
+                    <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+
+            <div class="nav-sheet-grid">
+                <a href="#home" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#about" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="info"></i>
+                    <span>عن المشروع والملكية</span>
+                </a>
+                <a href="#how-it-works" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="workflow"></i>
+                    <span>كيف نعمل (8 مراحل)</span>
+                </a>
+                <a href="#impact" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>لوحة الأثر والمدارس</span>
+                </a>
+                <a href="#smart-platform" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="cpu"></i>
+                    <span>المنصة الذكية NISGP</span>
+                </a>
+                <a href="#calculators" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="calculator"></i>
+                    <span>حاسبة الكربون والعوائد</span>
+                </a>
+                <a href="#knowledge" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="book-open"></i>
+                    <span>مكتبة الأنشطة</span>
+                </a>
+                <a href="#forms" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="send"></i>
+                    <span>نماذج التسجيل وواتساب</span>
+                </a>
+                <a href="#policy" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="shield-check"></i>
+                    <span>سياسة الحماية والأمان</span>
+                </a>
+                <a href="#admin" class="nav-sheet-item" onclick="closeNavSheet()">
+                    <i data-lucide="settings"></i>
+                    <span>لوحة المشرف CMS</span>
+                </a>
+            </div>
+
+            <div style="padding: 0.85rem 1.25rem; background: #061A13; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem;">
+                <span style="color: rgba(255,255,255,0.7);">جمعية الإسراء #1124</span>
+                <a href="https://wa.me/201064376377" target="_blank" style="color: #34D399; font-weight: 700; text-decoration: underline; display: flex; align-items: center; gap: 0.3rem;">
+                    <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> واتساب المباشر
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Search Modal -->
+    <div class="search-modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-label="نافذة البحث الفوري">
+        <div class="search-modal-box">
+            <div class="search-input-header">
+                <i data-lucide="search" style="color: #1F7A5A; width: 22px; height: 22px;"></i>
+                <input type="text" id="searchInput" class="search-input-field" placeholder="ابحث في المدارس، الحاسبات، الشركاء، أو السياسة..." autocomplete="off">
+                <button type="button" id="closeSearchBtn" onclick="window.closeGlobalSearch && window.closeGlobalSearch()" style="background: transparent; border: none; cursor: pointer; color: #64748B; padding: 4px;">
+                    <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+            <div class="search-results-list" id="searchResults">
+                <!-- Live search results injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container Host for Single-Page Application (SPA) Views -->
+    <main id="main-content" class="main-content" tabindex="-1" role="main">
+        <!-- Dynamic Page JS views rendered here -->
+    </main>
+
+    <!-- Global Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer" style="position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 2000; width: 90%; max-width: 420px; pointer-events: none;"></div>
+
+    <!-- Floating Scroll-To-Top Button -->
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="العودة لأعلى الصفحة" title="العودة لأعلى الصفحة">
+        <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+    </button>
+
+    <!-- Native Bottom Navigation Bar (5 Primary Action Tabs) -->
+    <nav class="bottom-nav-bar" role="navigation" aria-label="شريط التنقل السفلي">
+        <a href="#home" class="nav-tab-btn active" id="tab-home" aria-label="الرئيسية">
+            <i data-lucide="home"></i>
+            <span>الرئيسية</span>
+        </a>
+        <a href="#impact" class="nav-tab-btn" id="tab-impact" aria-label="الأثر">
+            <i data-lucide="bar-chart-2"></i>
+            <span>الأثر</span>
+        </a>
+        <a href="#calculators" class="nav-tab-btn" id="tab-calculators" aria-label="الحاسبات">
+            <i data-lucide="calculator"></i>
+            <span>الحاسبات</span>
+        </a>
+        <a href="#forms" class="nav-tab-btn" id="tab-forms" aria-label="النماذج">
+            <i data-lucide="send"></i>
+            <span>النماذج</span>
+        </a>
+        <button type="button" class="nav-tab-btn" id="tab-menu" aria-label="المزيد والقائمة" onclick="openNavSheet()">
+            <i data-lucide="grid"></i>
+            <span>المزيد</span>
+        </button>
+    </nav>
+
+    <!-- Direct Modal Script Functions for 100% Reliability -->
+    <script>
+        function openNavSheet() {
+            var sheet = document.getElementById('navSheetBackdrop');
+            if (sheet) {
+                sheet.classList.add('show');
+                sheet.style.display = 'flex';
+                sheet.style.opacity = '1';
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.lucide) window.lucide.createIcons();
+        }
+
+        function closeNavSheet() {
+            var sheet = document.getElementById('navSheetBackdrop');
+            if (sheet) {
+                sheet.classList.remove('show');
+                sheet.style.display = 'none';
+                sheet.style.opacity = '0';
+                document.body.style.overflow = '';
+            }
+        }
+
+        window.openMobileMenu = openNavSheet;
+        window.closeMobileMenu = closeNavSheet;
+        window.toggleMobileDrawer = openNavSheet;
+
+        // Auto open if URL has openMenu or #menu
+        if (window.location.search.includes('openMenu') || window.location.hash === '#menu') {
+            setTimeout(openNavSheet, 50);
+        }
+    </script>
+
+    <!-- All 10 Full SPA Page Scripts with Cache Busting -->
+    <script src="./pages/home.js?v=3.1.0"></script>
+    <script src="./pages/about.js?v=3.1.0"></script>
+    <script src="./pages/how-it-works.js?v=3.1.0"></script>
+    <script src="./pages/impact.js?v=3.1.0"></script>
+    <script src="./pages/smart-platform.js?v=3.1.0"></script>
+    <script src="./pages/calculators.js?v=3.1.0"></script>
+    <script src="./pages/knowledge.js?v=3.1.0"></script>
+    <script src="./pages/forms.js?v=3.1.0"></script>
+    <script src="./pages/policy.js?v=3.1.0"></script>
+    <script src="./pages/admin.js?v=3.1.0"></script>
+
+    <!-- Master Mobile Application Router Engine -->
+    <script src="./js/app.js?v=3.1.0"></script>
+
+</body>
+</html>

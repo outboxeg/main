@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Strictly Disallow Insecure HTTP Cleartext Traffic -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    
+    <!-- Whitelist Secure HTTPS Communication Domains -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">wa.me</domain>
+        <domain includeSubdomains="true">api.whatsapp.com</domain>
+        <domain includeSubdomains="true">unpkg.com</domain>
+        <domain includeSubdomains="true">fonts.googleapis.com</domain>
+        <domain includeSubdomains="true">fonts.gstatic.com</domain>
+    </domain-config>
+</network-security-config>
