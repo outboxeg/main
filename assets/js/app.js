@@ -3,22 +3,25 @@
    Bara El-Sandouq – Smart Green School Project
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Page View Registry
-    const routes = {
-        'home': renderHomePage,
-        'about': renderAboutPage,
-        'how-it-works': renderHowItWorksPage,
-        'impact': renderImpactPage,
-        'smart-platform': renderSmartPlatformPage,
-        'calculators': renderCalculatorsPage,
-        'forms': renderFormsPage,
-        'knowledge': renderKnowledgePage,
-        'policy': renderPolicyPage,
-        'safety-policy': renderPolicyPage,
-        'simulator': renderSimulatorPage,
-        'admin': renderAdminPage
-    };
+function initApp() {
+    // 1. Safe Page View Getter
+    function getPageRenderer(pageKey) {
+        const renderers = {
+            'home': typeof renderHomePage === 'function' ? renderHomePage : (window.renderHomePage || null),
+            'about': typeof renderAboutPage === 'function' ? renderAboutPage : (window.renderAboutPage || null),
+            'how-it-works': typeof renderHowItWorksPage === 'function' ? renderHowItWorksPage : (window.renderHowItWorksPage || null),
+            'impact': typeof renderImpactPage === 'function' ? renderImpactPage : (window.renderImpactPage || null),
+            'smart-platform': typeof renderSmartPlatformPage === 'function' ? renderSmartPlatformPage : (window.renderSmartPlatformPage || null),
+            'calculators': typeof renderCalculatorsPage === 'function' ? renderCalculatorsPage : (window.renderCalculatorsPage || null),
+            'forms': typeof renderFormsPage === 'function' ? renderFormsPage : (window.renderFormsPage || null),
+            'knowledge': typeof renderKnowledgePage === 'function' ? renderKnowledgePage : (window.renderKnowledgePage || null),
+            'policy': typeof renderPolicyPage === 'function' ? renderPolicyPage : (window.renderPolicyPage || null),
+            'safety-policy': typeof renderPolicyPage === 'function' ? renderPolicyPage : (window.renderPolicyPage || null),
+            'simulator': typeof renderSimulatorPage === 'function' ? renderSimulatorPage : (window.renderSimulatorPage || null),
+            'admin': typeof renderAdminPage === 'function' ? renderAdminPage : (window.renderAdminPage || null)
+        };
+        return renderers[pageKey] || renderers['home'] || (typeof renderHomePage === 'function' ? renderHomePage : null);
+    }
 
     const appContent = document.getElementById('main-content') || document.getElementById('app-content');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -29,9 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Client-side Router Logic with Page Transition
     function navigateToPage(pageKey) {
-        if (!routes[pageKey]) pageKey = 'home';
-
+        if (!pageKey) pageKey = 'home';
         if (!appContent) return;
+
+        const renderer = getPageRenderer(pageKey);
+        if (typeof renderer !== 'function') {
+            console.error('Renderer for page not found:', pageKey);
+            return;
+        }
 
         // Apply visual fade transition
         appContent.style.opacity = '0';
@@ -39,10 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         appContent.style.transition = 'opacity 150ms ease, transform 150ms ease';
 
         setTimeout(() => {
-            // Render target page view into main app container
-            if (typeof routes[pageKey] === 'function') {
-                appContent.innerHTML = routes[pageKey]();
+            try {
+                // Render target page view into main app container
+                appContent.innerHTML = renderer();
+            } catch (err) {
+                console.error('Error rendering page:', pageKey, err);
             }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             // Update Nav Link Active States
@@ -61,12 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Close mobile menu if open
-            if (navMenu && (navMenu.classList.contains('active') || navMenu.classList.contains('is-open'))) {
+            if (navMenu && navMenu.classList && (navMenu.classList.contains('active') || navMenu.classList.contains('is-open'))) {
                 toggleMobileMenu(false);
             }
 
             // Page-specific initialization hooks upon hash change
             if (pageKey === 'home') {
+                if (typeof initHomeLogic === 'function') initHomeLogic();
                 if (typeof initHomeCounters === 'function') initHomeCounters();
                 if (typeof initCalculatorsLogic === 'function') initCalculatorsLogic();
             }
@@ -88,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if ((pageKey === 'policy' || pageKey === 'safety-policy') && typeof initPolicyLogic === 'function') {
                 initPolicyLogic();
             }
-                        if (pageKey === 'simulator' && typeof initSimulatorLogic === 'function') {
+            if (pageKey === 'simulator' && typeof initSimulatorLogic === 'function') {
                 initSimulatorLogic();
             }
             if (pageKey === 'admin' && typeof initAdminLogic === 'function') {
@@ -98,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fade back in
             appContent.style.opacity = '1';
             appContent.style.transform = 'translateY(0)';
-        }, 150);
+        }, 100);
     }
     window.navigateToPage = navigateToPage;
 
@@ -113,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Mobile Menu Toggle Logic (Spatial Consistency)
     function toggleMobileMenu(forceState) {
-        if (!navMenu) return;
+        if (!navMenu || !navMenu.classList) return;
         const isOpen = forceState !== undefined ? forceState : (!navMenu.classList.contains('active') && !navMenu.classList.contains('is-open'));
         if (isOpen) {
             navMenu.classList.add('active', 'is-open');
@@ -174,7 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modalOverlay) modalOverlay.style.display = 'none';
         });
     }
-});
+}
+
+// Auto bootstrap when DOM is ready or immediately if already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
 
 // 7. Global Toast Notification Function (Apple-style Toast)
 window.showToast = function(message) {
